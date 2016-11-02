@@ -42,22 +42,25 @@
 		border-radius: 0;
 	}
 	&_with-icon {
-		padding-left: 6.5rem;
-
-		background-image: linear-gradient(to right, #f0efea 4.5rem,transparent 4.5rem);
+		padding-left: 4.5rem;
 		+ svg {
 			font-size: 1.6rem;
 
 			position: absolute;
 			top: 0;
-			left: 1.5rem;
+			left: 2rem;
 
 			display: block;
 
-			height: 4.5rem;
+			height: 100%;
 			margin: auto;
 
+			transition: color .2s;
+
 			color: #c5cace;
+		}
+		&:focus + svg {
+			color: #28bbf0;
 		}
 	}
 }

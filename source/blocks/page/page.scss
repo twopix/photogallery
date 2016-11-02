@@ -7,8 +7,14 @@
 	min-height: 100%;
 
 	table-layout: fixed;
+	&_bg-full-scr {
+		position: relative;
 
-	background: url(../img/page_welcome_back.jpg) no-repeat center center / cover;
+		background-image: linear-gradient(rgba(0,0,0,0) 75%, rgba(0,0,0,.6) 100%), url(../img/page_welcome_back.jpg);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+	}
 	&__main {
 		display: table-row;
 

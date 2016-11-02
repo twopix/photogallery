@@ -12,9 +12,16 @@
 			margin: 0;
 		}
 	}
+	&__title {
+		font-family: $default-font-bold;
+		font-size: 1.4rem;
+		line-height: 1;
+
+		margin: 2rem 0 0;;
+	}
 	&__helper {
 		font-size: 1.4rem;
-		line-height: .9;
+		line-height: 1;
 
 		margin-top: 1rem;
 		&_center {
@@ -35,19 +42,25 @@
 		padding: .6rem 0 0;
 	}
 	&__tip {
-		font-size: 1.2rem;
-		line-height: 1.2rem;
+		font-family: $default-font-bold;
+		font-size: 1.4rem;
+		line-height: 1.4rem;
 
 		display: block;
+
+		margin: 1em 0;
+
+		text-align: center;
 		&-message {
 			display: inline-block;
 
+			box-sizing: border-box;
 			margin-top: .5rem;
-			padding: .5rem;
+			padding: .5rem 1rem;
 
-			color: #fff;
+			color: rgba(#323232,.6);
 			border-radius: .5rem;
-			background: rgba(#c00,.7);
+			background: rgba(#ffe0e0,.9);
 		}
 	}
 }

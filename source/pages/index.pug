@@ -13,17 +13,54 @@ block content
 				.welcome__form-wrap
 					form.welcome__form.form(action="" method="post")
 						label.form__row.welcome__form-row
-							input.input-text.input-text_full-width.input-text_rect(type="mail" placeholder="Электронная почта" required)
+							input.input-text.input-text_full-width.input-text_rect.input-text_with-icon(type="mail" placeholder="Электронная почта" required)
+							+svg('envelope')
 						label.form__row.welcome__form-row
-							input.input-text.input-text_full-width.input-text_rect(type="password" placeholder="Пароль" required)
+							input.input-text.input-text_full-width.input-text_rect.input-text_with-icon(type="password" placeholder="Пароль" required)
+							+svg('password')
 						.form__row.form__helper 
 							a.form__helper-lnk(href="#" title="") Забыли пароль?
+						.form__tip
+							.form__tip-message E-mail или пароль не верен
 						.form__row.form__btns
 							button.btn.btn_full-width Войти
 						.form__row.form__helper.form__helper_center Нет аккаунта? 
 							a.form__helper-lnk(href="#" title="") Зарегистрироваться
-				.welcome__flipper
-					include ../blocks/flipper/flipper
+				.welcome__form-wrap
+					form.welcome__form.form(action="" method="post")
+						label.form__row.welcome__form-row
+							input.input-text.input-text_full-width.input-text_rect.input-text_with-icon(type="text" placeholder="Имя" required)
+							+svg('name')
+						label.form__row.welcome__form-row
+							input.input-text.input-text_full-width.input-text_rect.input-text_with-icon(type="mail" placeholder="Электронная почта" required)
+							+svg('envelope')
+						label.form__row.welcome__form-row
+							input.input-text.input-text_full-width.input-text_rect.input-text_with-icon(type="password" placeholder="Пароль" required)
+							+svg('password')
+						.form__row.form__helper Ваши данные остаются строго конфеденциальны
+						.form__tip
+							.form__tip-message E-mail или пароль не верен
+						.form__row.form__btns
+							button.btn.btn_full-width Создать аккаунт
+						.form__row.form__helper.form__helper_center Уже зарегистрированы? 
+							a.form__helper-lnk(href="#" title="") Войти
+				.welcome__form-wrap
+					form.welcome__form.form(action="" method="post")
+						.form__title Забыли пароль?
+						.form__row.form__helper 
+							p Ничего страшного, введите свой e-mail, и мы вышлем вам инструкции по востановлению пароля
+
+						label.form__row.welcome__form-row
+							input.input-text.input-text_full-width.input-text_rect.input-text_with-icon(type="mail" placeholder="Электронная почта" required)
+							+svg('envelope')
+						.form__tip
+							.form__tip-message E-mail или пароль не верен
+						.form__row.form__btns
+							button.btn.btn_full-width Восстановить пароль
+						.form__row.form__helper.form__helper_center Вспомнили пароль?  
+							a.form__helper-lnk(href="#" title="") Войти
+				//- .welcome__flipper
+				//- 	include ../blocks/flipper/flipper
 		footer.page__footer.page__footer_center.page__footer_color-white
 			.page__footer-wrap
 				.copyright.copyright_color-white 2016 Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool

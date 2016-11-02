@@ -1,13 +1,13 @@
 .welcome {
 	text-align: center;
 	&__title {
-		margin: 0 0 1.2rem;
-
 		color: #fff;
 	}
 	&__text {
 		font-size: 1.6rem;
 		line-height: 1.5;
+
+		margin: 1.2rem 0 0;
 
 		color: #fff;
 	}
@@ -15,6 +15,7 @@
 		padding: 0 2rem 2rem;
 		&-wrap {
 			display: inline-block;
+			overflow: hidden;
 
 			width: 100%;
 			max-width: 28rem;
@@ -24,14 +25,14 @@
 
 			border-radius: 2rem;
 			background: #fff;
-			overflow:hidden;
 		}
 		&-row {
 			display: block;
 
-			margin: 0 -2rem;
+			margin: -.1rem -2rem 0 -2rem;
 
-			border-bottom:.1rem solid #e1e1e1;
+			border-top: .1rem solid #e1e1e1;
+			border-bottom: .1rem solid #e1e1e1;
 		}
 	}
 }
