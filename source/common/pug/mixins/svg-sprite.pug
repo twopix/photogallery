@@ -1,0 +1,4 @@
+- var svg = "./assets/img/sprite.svg" 
+mixin svg(name, type)
+    svg(role="img" class= (type ? type : "svg-icon") + " " + (type ? type : "svg-icon") + "_" + name)
+        use(xlink:href=svg + "#" + name)

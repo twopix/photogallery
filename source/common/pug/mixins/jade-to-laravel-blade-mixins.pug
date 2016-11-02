@@ -1,0 +1,258 @@
+//- As you may know, Laravel 5 provides the Elixir to compile assets with no pain.
+  These mixins is for those of you who want to use Jade power combined with that of Laravel Blade.
+  The syntax mimic Blade statements, however identation differs in some cases.
+
+- var newline = "\r\n"
+- var loopIterator = '$iterator'
+
+//- @extends mixin
+  Example:  +extends('layouts/master')
+  Compiled: @extends('layouts/master')
+mixin extends(file)
+    | @extends('#{file}')
+    =newline + newline
+
+//- @include mixin
+//-
+  Example:  +include('partials/nav-menu')
+  Compiled: @include('partials/nav-menu')
+
+  !! Now notice the single quotes that frame the value !!
+
+  Example:  +include('partials/nav-menu', {'items': '$items'})
+  Compiled: @include('partials/nav-menu', ['items' => $items])
+
+  !! Here notice the double quotes that frame the string !!
+
+  Example:  +include('partials/person', {'name': "'John Doe'"}
+  Compiled: @include('partials/person', ['name' => 'John Doe'])
+mixin include(file, data)
+    - var stmt = "@include('" + file + "'";
+
+    if data
+        - var result = '['
+
+        for val, key in data
+            - result += "'"+ key + "' => " + val
+
+        - result += ']'
+        - stmt += ", " + result
+
+    !=stmt + ")"
+    =newline + newline
+
+//- @section mixin
+//-
+  Example: 
+  +section('content')
+  
+  Compiled: 
+    @section('content')
+    @stop
+
+  Example:
+    +section('sidebar', true)
+  Compiled:
+    @section('sidebar')
+    @overwrite
+mixin section(name, overwrite)
+    | @section('#{name}')
+    =newline
+    block
+    if overwrite
+        ="@overwrite"
+    else
+        ="@stop"
+    =newline + newline
+//- @yield mixin
+//-
+  Example:  +yield('content')
+  Compiled: @yield('content', '')
+
+  Example:  +yield('content', "'Default content'")
+  Compiled: @yield('content', 'Default content')
+mixin yield(section, defaultContent)
+    | @yield('#{section}', '#{defaultContent}')
+    =newline
+
+//- common mixin for a @begin-@end like statements
+mixin statement(stmt, condition)
+    =newline
+    | @#{stmt}(!{condition})
+    block
+    =newline
+    | @end#{stmt}
+    =newline
+
+//- @if statement mixin
+//-
+  Example:
+  +if('$number > 999')
+    .number The Big Number
+
+  Compiled:
+  @if($number > 999)
+  <div class="number">The Big Number</div>
+  @endif
+mixin if(condition)
+    +statement('if', condition)
+        block
+
+//- @unless statement mixin
+//-
+  Example:
+  +unless('$number > 999')
+    .number The Small Number
+
+  Compiled:
+  @unless($number > 999)
+  <div class="number">The Small Number</div>
+  @endunless
+mixin unless(condition)
+    +statement('unless', condition)
+        block
+
+//-@else statement mixin
+//-
+  Example:
+  .number
+    +if('$number > 999')
+      | The Big Number
+      +else
+        | The Small Number
+
+  Compiled:
+  <div class="number">
+  @if($number > 999)
+  The Big Number
+  @else
+  The Small Number
+  @endif
+  </div>
+mixin else()
+    =newline + '@else'
+    block
+
+//- @elseif statement mixin
+//- see if and else please
+mixin elseif(condition)
+    =newline
+    | @elseif(!{condition})
+    block
+
+//- @for statement mixin
+//-
+  Example:
+  .pages
+    +for('$i = 0; $i < count($pages); $i++')
+      .page {{ $pages[$i]->title }}
+
+  Compiled:
+  <div class="pages">
+  @for($i = 0; $i < count($pages); $i++)
+  <div class="page">{{ $pages[$i]->title }}
+  @endfor
+  </div>
+mixin for(condition)
+    +statement('for', condition)
+        block
+    
+//- @while statement mixin
+//-
+  Example:
+  +while(true)
+    .message Aaaaarggghhh!
+
+  Compiled:
+  @while(true)
+  <div class="message">Aaaaarggghhh!</div>
+  @endwhile
+mixin while(condition)
+    +statement('while', condition)
+        block
+
+//- @foreach statement mixin
+//-
+  Example:
+  +foreach('$pages', '$page', '$pid', '$pnum')
+    .page {{ $page->title }}
+
+  Compiled:
+  <?php $pnum = 0; ?>
+  @foreach($pages as $pid => $page)
+  <div class="page">{{ $page->title }}</div>
+  <?php $pnum++; ?>
+  @endforeach
+  <?php unset($pnum); ?>
+mixin foreach(items, item, index, iterator, stmt)
+    - var stmt = stmt || 'foreach'
+    - var index = index || '$idx'
+    - var iterator = iterator || loopIterator
+
+    =newline
+    | <?php #{iterator} = 0; ?>
+    =newline
+    | @#{stmt}(#{items} as #{index} => #{item})
+    if isForelse
+        block
+    else
+        block
+        =newline
+        | <?php #{iterator} ++; ?>
+    =newline
+    | @end#{stmt}
+    =newline
+    | <?php unset(#{iterator}); ?>
+    =newline + newline
+
+//- @forelse statement mixin
+//- 
+  Example:
+  +forelse('$pages', '$page')
+    .page {{ $page->title }}
+    +empty
+      p Sorry, nothing was found.
+
+  Compiled:
+  <?php $iterator = 0; ?>
+  @forelse($pages as $idx => $page)
+  <div class="page">{{ $page->title }}</div>
+  <?php $iterator++; ?>
+  @empty
+  <p>Sorry, nothing was found.</p>
+  @endforelse
+  <?php unset($iterator); ?>
+mixin forelse(items, item, index, iterator)
+    - var iterator = iterator || loopIterator
+
+    +foreach(items, item, index, iterator, 'forelse')
+        block
+
+//- @empty statement mixin
+mixin empty(iterator)
+    - var iterator = iterator || loopIterator
+
+    =newline
+    | <?php #{iterator}++; ?>
+    =newline + '@empty' + newline
+    block
+    =newline
+
+//- @break statement mixin
+//- !! Laravel Blade does not have this statement by default !!
+mixin break()
+    =newline + '@break;' + newline
+
+//- @lang mixin
+//-
+  Example:  +lang('language.line')
+  Compiled: @lang('language.line')
+mixin lang(line)
+    | @lang('#{line}')
+
+//- @choice mixin
+//-
+  Example:  +choice('language.line', 1)
+  Compiled: @choice('language.line', 1)
+mixin choice(line, choice)
+    | @choice('#{line}', #{choice})
