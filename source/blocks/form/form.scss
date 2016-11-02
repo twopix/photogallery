@@ -1,0 +1,53 @@
+.form {
+	position: relative;
+	&__row {
+		line-height: 1;
+
+		position: relative;
+
+		display: block;
+
+		margin: 0 0 1rem;
+		&:last-child {
+			margin: 0;
+		}
+	}
+	&__helper {
+		font-size: 1.4rem;
+		line-height: .9;
+
+		margin-top: 1rem;
+		&_center {
+			text-align: center;
+		}
+	}
+	&__helper-lnk {
+		font-family: $default-font-bold;
+
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__btns {
+		overflow: hidden;
+
+		padding: .6rem 0 0;
+	}
+	&__tip {
+		font-size: 1.2rem;
+		line-height: 1.2rem;
+
+		display: block;
+		&-message {
+			display: inline-block;
+
+			margin-top: .5rem;
+			padding: .5rem;
+
+			color: #fff;
+			border-radius: .5rem;
+			background: rgba(#c00,.7);
+		}
+	}
+}

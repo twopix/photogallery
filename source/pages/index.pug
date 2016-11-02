@@ -3,5 +3,27 @@ extends ../layout
 block variables
 	- var title = 'Main'
 
-block content	
-	include ../blocks/h1/h1
+block content
+	.page.page_bg-full-scr
+		main.page__main
+			.page__main-wrap.page__main-wrap_middle.welcome
+				.welcome__title
+					h1.title.title_color-white Добро пожаловать
+				.welcome__text Перед вами сервис, который поможет вам организовать свои фотографии <br />в альбомы и поделиться ими со всем миром!
+				.welcome__form-wrap
+					form.welcome__form.form(action="" method="post")
+						label.form__row.welcome__form-row
+							input.input-text.input-text_full-width.input-text_rect(type="mail" placeholder="Электронная почта" required)
+						label.form__row.welcome__form-row
+							input.input-text.input-text_full-width.input-text_rect(type="password" placeholder="Пароль" required)
+						.form__row.form__helper 
+							a.form__helper-lnk(href="#" title="") Забыли пароль?
+						.form__row.form__btns
+							button.btn.btn_full-width Войти
+						.form__row.form__helper.form__helper_center Нет аккаунта? 
+							a.form__helper-lnk(href="#" title="") Зарегистрироваться
+				.welcome__flipper
+					include ../blocks/flipper/flipper
+		footer.page__footer.page__footer_center.page__footer_color-white
+			.page__footer-wrap
+				.copyright.copyright_color-white 2016 Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool

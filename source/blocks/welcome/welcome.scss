@@ -1,0 +1,37 @@
+.welcome {
+	text-align: center;
+	&__title {
+		margin: 0 0 1.2rem;
+
+		color: #fff;
+	}
+	&__text {
+		font-size: 1.6rem;
+		line-height: 1.5;
+
+		color: #fff;
+	}
+	&__form {
+		padding: 0 2rem 2rem;
+		&-wrap {
+			display: inline-block;
+
+			width: 100%;
+			max-width: 28rem;
+			margin: 3.3rem 0 0;
+
+			text-align: left;
+
+			border-radius: 2rem;
+			background: #fff;
+			overflow:hidden;
+		}
+		&-row {
+			display: block;
+
+			margin: 0 -2rem;
+
+			border-bottom:.1rem solid #e1e1e1;
+		}
+	}
+}

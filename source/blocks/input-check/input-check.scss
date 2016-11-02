@@ -1,0 +1,37 @@
+.input-check {
+	font-size: 0;
+
+	display: inline-block;
+
+	cursor: pointer;
+	&__label {
+		margin: 0 0 0 1rem;
+	}
+	&__input[type = "checkbox"] {
+		display: none;
+	}
+	&__input[type = "checkbox"] + &__fake-check {
+		font-size: 0;
+		line-height: 2rem;
+
+		width: 2rem;
+		height: 2rem;
+
+		transition: background-color .2s;
+		text-align: center;
+
+		border-radius: .2rem;
+		svg {
+			font-size: 1.2rem;
+
+			transition: opacity .2s;
+
+			opacity: 0;
+		}
+	}
+	&__input[type = "checkbox"]:checked + &__fake-check {
+		svg {
+			opacity: 1;
+		}
+	}
+}

@@ -1,0 +1,63 @@
+.input-text {
+	font-family: $default-font;
+	font-size: 1.6rem;
+	line-height: 4rem;
+
+	box-sizing: border-box;
+	width: auto;
+	max-width: 100%;
+	height: 4rem;
+	padding: 0 2rem;
+
+	transition: background-color .2s;
+
+	color: #323232;
+	border: 0;
+	border-radius: 2rem;
+	outline: none;
+	background-color: rgba(#fff,.75);
+
+	appearance: none;
+	&::placeholder {
+		transition: text-indent .5s,color .5s,opacity .5s;
+		text-indent: 0;
+
+		opacity: 1;
+		color: rgba(#323232,.6);
+	}
+	&:focus {
+		background-color: #fff;
+		&::placeholder {
+			transition: text-indent .5s, color .5s, opacity .5s;
+			text-indent: -100%;
+
+			opacity: 0;
+			color: rgba(#323232,0);
+		}
+	}
+	&_full-width {
+		width: 100%;
+	}
+	&_rect {
+		border-radius: 0;
+	}
+	&_with-icon {
+		padding-left: 6.5rem;
+
+		background-image: linear-gradient(to right, #f0efea 4.5rem,transparent 4.5rem);
+		+ svg {
+			font-size: 1.6rem;
+
+			position: absolute;
+			top: 0;
+			left: 1.5rem;
+
+			display: block;
+
+			height: 4.5rem;
+			margin: auto;
+
+			color: #c5cace;
+		}
+	}
+}
