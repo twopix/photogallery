@@ -1,29 +1,5 @@
-var pngquant = require('imagemin-pngquant');
-
 module.exports = {
-  root: './public',
-
-  clean: [
-    './public/css',
-    './public/js',
-    './public/img'
-  ],
-
-  spriteSvgConfig: {
-    mode: {
-      symbol: {
-        dest: './public/',
-        sprite: 'img/sprite.svg'
-      }
-    }
-  },
-
-  autoprefixerConfig: ['last 3 version', '> 1%', 'ie 8', 'ie 9', 'Opera 12.1'],
-
-  imageminOptions: {
-    progressive: true,
-    use: [pngquant()],
-    interlaced: true,
-    multipass: true
-  }
+  root: './build',
+  autoprefixerConfig: ['ie 9', 'ie 10','last 20 versions', 'opera 12.1', 'ios 6', 'android 4'],
+  content: require('../source/content.json')
 };

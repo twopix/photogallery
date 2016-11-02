@@ -1,0 +1,19 @@
+html,
+body {
+	height: 100%;
+}
+body {
+	font-family: $default-font;
+}
+img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+
+	-ms-interpolation-mode: bicubic;
+}
+::selection {
+	color: #fff;
+	background-color: #06f;
+	text-shadow: none;
+}

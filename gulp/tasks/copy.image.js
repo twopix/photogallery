@@ -2,7 +2,9 @@
 
 module.exports = function() {
   $.gulp.task('copy:image', function() {
-    return $.gulp.src(['./resources/assets/images/**/*.*', '!./resources/assets/images/sprite/**/*.*'], { since: $.gulp.lastRun('copy:image') })
-      .pipe($.gulp.dest($.config.root + '/img'));
+    return $.gulp.src(['./source/blocks/**/img/*.+(jpg|jpeg|png|gif)','./source/static/images/*.+(jpg|jpeg|png|gif|ico)'], { since: $.gulp.lastRun('copy:image') })
+    	.pipe($.gp.imagemin())
+    	.pipe($.gp.flatten())
+      	.pipe($.gulp.dest($.config.root + '/assets/img'));
   });
 };
