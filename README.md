@@ -33,3 +33,9 @@ DB_PASSWORD=password
 локальный сервер: **_php -S localhost:8888 -t public_**.
 
 
+##№ Инструкция по сборщику
+1. npm install gulpjs/gulp-cli -g  // Install the latest Gulp CLI tools globally
+2. npm install
+3. отредактировать в файле gulp/config.js пути
+4. запуск команды "gulp"
+
