@@ -1,0 +1,16 @@
+.search {
+	background:rgba(#f1f1f1,.8);
+	min-height:100%;
+	&__wrap {
+		max-width: $max-width;
+		box-sizing:border-box;
+		margin:auto;
+		padding:1rem;
+		text-align:right;
+	}
+	&__form {
+		display:inline-block;
+		width:100%;
+		max-width:38rem;
+	}
+}

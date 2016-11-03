@@ -10,7 +10,7 @@
 	padding: 0 2rem;
 
 	cursor: pointer;
-	transition: background-color .2s;
+	transition: background-color .2s ease-out, color .2s ease-out;
 	white-space: nowrap;
 
 	color: #fff;
@@ -18,14 +18,61 @@
 	border-radius: 2rem;
 	outline: none;
 	background: #28bbf0;
-	&:hover{
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .2);
+	&__text {
+		font-size: 1.4rem;
+
+		display: inline-block;
+		overflow: hidden;
+
+		box-sizing: border-box;
+		max-width: 0;
+		margin-left: 0;
+
+		transition: max-width .3s ease-out, margin .3s linear;
+		vertical-align: middle;
+	}
+	&:hover {
 		background: #24b0e3;
 	}
 	&:focus,
 	&:active {
 		background: #139acb;
 	}
+	&_flat {
+		box-shadow: none;
+	}
 	&_full-width {
 		width: 100%;
+	}
+	&_light {
+		color: #a0a09f;
+		background: #fff;
+		&:focus {
+			background: darken(#fff,10%);
+		}
+		&:hover {
+			color: #fff;
+		}
+	}
+	&_with-icon {
+		font-size: 0;
+
+		position: relative;
+
+		padding: 0;
+		svg {
+			font-size: 2rem;
+
+			display: inline-block;
+
+			margin: 0 1rem;
+
+			vertical-align: middle;
+		}
+		&:hover .btn__text {
+			max-width: 20rem;
+			margin: 0 1.5rem 0 0;
+		}
 	}
 }
