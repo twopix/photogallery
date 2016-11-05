@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+/*use App\Http\Requests;*/
 use App\Http\Controllers\Controller;
 use JWTAuth;
-use Tymon\JWTAuthExceptions\JWTException;
-use App\User;
+use Tymon\JWTAuth\Exceptions\JWTException;
 
 
 class AuthenticateController extends Controller
 {
+
     public function __construct()
     {
         // Apply the jwt.auth middleware to all methods in this controller
@@ -23,6 +24,7 @@ class AuthenticateController extends Controller
 
     public function index()
     {
+        // Retrieve all the users in the database and return them
         $users = User::all();
         return $users;
     }
