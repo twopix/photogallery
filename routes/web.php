@@ -22,5 +22,7 @@ Route::group(array('prefix' => 'api/v1'), function() {
     // this ensures that a user can't access api/create or api/edit when there's nothing there
     Route::resource('employees', 'Employees',
         array('only' => array('index', 'store', 'update', 'destroy')));
+    Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
 
 });
