@@ -2,6 +2,7 @@
 	font-family: $default-font;
 	font-size: 1.6rem;
 	line-height: 4rem;
+	line-height:1;
 
 	box-sizing: border-box;
 	width: auto;
@@ -9,7 +10,7 @@
 	height: 4rem;
 	padding: 0 2rem;
 
-	transition: background-color .2s;
+	transition: background-color .2s, border-color .2s;
 
 	color: #323232;
 	border: 0;
@@ -61,6 +62,12 @@
 		}
 		&:focus + svg {
 			color: #28bbf0;
+		}
+	}
+	&_border_transparent {
+		border: .1rem solid rgba(#29bbee,0);
+		&:focus {
+			border-color: rgba(#29bbee,1);
 		}
 	}
 }

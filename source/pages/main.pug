@@ -5,9 +5,9 @@ block variables
 
 block content
 	.page
-		header.page__header
-			img.page__header-back(src="./assets/img/page__header-back.jpg" alt="")
-			.page__header-wrap
+		header.header
+			img.header__bg(src="./assets/img/page__header-back.jpg" alt="")
+			.header__wrap
 				.profile
 					.profile__pic
 						img(src="./assets/img/user-pic.jpg" alt="")
@@ -40,20 +40,213 @@ block content
 									+svg('off')
 									span.btn__text Выйти
 
-			.page__header-search
+			.header__search
 				.search
 					.search__wrap 
 						form.search__form.form(action="#" method="post") 
 							label.form__row
-								input.input-text.input-text_with-icon.input-text_full-width(type="text" placeholder="Исследовать мир")
+								input.input-text.input-text_with-icon.input-text_border_transparent.input-text_full-width(type="text" placeholder="Исследовать мир")
 								+svg('search')
 
-		main.page__main
+		main.main
+			.main__wrap
+				.new-in-world
+					.title.new-in-world__title Новое в мире
+					.new-in-world__list
+						.photo.new-in-world__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__pic-zoom
+									+svg('loupe')
+							.photo__info
+								a.photo__user(href="" title="")
+									img(src="./assets/img/user-pic.jpg" alt="")
+									.photo__user-zoom
+										+svg('more')
+								.photo__info-wrap
+									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+									.photo__actions
+										button.photo__action
+											+svg('comments')
+											span.photo__action-name 4
+										button.photo__action
+											+svg('like')
+											span.photo__action-name 32
+							.photo__album 
+								a.photo__album-link(href="" title="")
+									+svg('album')
+									span.photo__album-title Прогулки по воде
+						.photo.new-in-world__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__pic-zoom
+									+svg('loupe')
+							.photo__info
+								a.photo__user(href="" title="")
+									img(src="./assets/img/user-pic.jpg" alt="")
+									.photo__user-zoom
+										+svg('more')
+								.photo__info-wrap
+									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+									.photo__actions
+										button.photo__action
+											+svg('comments')
+											span.photo__action-name 4
+										button.photo__action
+											+svg('like')
+											span.photo__action-name 32
+							.photo__album 
+								a.photo__album-link(href="" title="")
+									+svg('album')
+									span.photo__album-title Прогулки по воде
+						.photo.new-in-world__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__pic-zoom
+									+svg('loupe')
+							.photo__info
+								a.photo__user(href="" title="")
+									img(src="./assets/img/user-pic.jpg" alt="")
+									.photo__user-zoom
+										+svg('more')
+								.photo__info-wrap
+									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+									.photo__actions
+										button.photo__action
+											+svg('comments')
+											span.photo__action-name 4
+										button.photo__action
+											+svg('like')
+											span.photo__action-name 32
+							.photo__album 
+								a.photo__album-link(href="" title="")
+									+svg('album')
+									span.photo__album-title Прогулки по воде
+						.photo.new-in-world__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__pic-zoom
+									+svg('loupe')
+							.photo__info
+								a.photo__user(href="" title="")
+									img(src="./assets/img/user-pic.jpg" alt="")
+									.photo__user-zoom
+										+svg('more')
+								.photo__info-wrap
+									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+									.photo__actions
+										button.photo__action
+											+svg('comments')
+											span.photo__action-name 4
+										button.photo__action
+											+svg('like')
+											span.photo__action-name 32
+							.photo__album 
+								a.photo__album-link(href="" title="")
+									+svg('album')
+									span.photo__album-title Прогулки по воде
 
-		footer.page__footer.page__footer_color-white.page__footer_bg-dark
-			img.page__footer-back(src="./assets/img/page__header-back.jpg" alt="")
-			.page__footer-wrap
-				a.page__footer-top(href="#" title="")
+						.photo.new-in-world__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__pic-zoom
+									+svg('loupe')
+							.photo__info
+								a.photo__user(href="" title="")
+									img(src="./assets/img/user-pic.jpg" alt="")
+									.photo__user-zoom
+										+svg('more')
+								.photo__info-wrap
+									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+									.photo__actions
+										button.photo__action
+											+svg('comments')
+											span.photo__action-name 4
+										button.photo__action
+											+svg('like')
+											span.photo__action-name 32
+							.photo__album 
+								a.photo__album-link(href="" title="")
+									+svg('album')
+									span.photo__album-title Прогулки по воде
+						.photo.new-in-world__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__pic-zoom
+									+svg('loupe')
+							.photo__info
+								a.photo__user(href="" title="")
+									img(src="./assets/img/user-pic.jpg" alt="")
+									.photo__user-zoom
+										+svg('more')
+								.photo__info-wrap
+									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+									.photo__actions
+										button.photo__action
+											+svg('comments')
+											span.photo__action-name 4
+										button.photo__action
+											+svg('like')
+											span.photo__action-name 32
+							.photo__album 
+								a.photo__album-link(href="" title="")
+									+svg('album')
+									span.photo__album-title Прогулки по воде
+						.photo.new-in-world__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__pic-zoom
+									+svg('loupe')
+							.photo__info
+								a.photo__user(href="" title="")
+									img(src="./assets/img/user-pic.jpg" alt="")
+									.photo__user-zoom
+										+svg('more')
+								.photo__info-wrap
+									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+									.photo__actions
+										button.photo__action
+											+svg('comments')
+											span.photo__action-name 4
+										button.photo__action
+											+svg('like')
+											span.photo__action-name 32
+							.photo__album 
+								a.photo__album-link(href="" title="")
+									+svg('album')
+									span.photo__album-title Прогулки по воде
+						.photo.new-in-world__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__pic-zoom
+									+svg('loupe')
+							.photo__info
+								a.photo__user(href="" title="")
+									img(src="./assets/img/user-pic.jpg" alt="")
+									.photo__user-zoom
+										+svg('more')
+								.photo__info-wrap
+									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+									.photo__actions
+										button.photo__action
+											+svg('comments')
+											span.photo__action-name 4
+										button.photo__action
+											+svg('like')
+											span.photo__action-name 32
+							.photo__album 
+								a.photo__album-link(href="" title="")
+									+svg('album')
+									span.photo__album-title Прогулки по воде
+					.new-in-world__more
+						button.btn.btn_flat.btn_bg_transparent Показать еще
+
+
+
+		footer.footer.footer_color_white.footer_bg-dark
+			img.footer__bg(src="./assets/img/page__header-back.jpg" alt="")
+			.footer__wrap
+				a.footer__top(href="#" title="")
 					+svg('top')
-				.page__footer-about Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
-				.page__footer-copyright.page__footer-copyright_gray 2016 Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool
+				.footer__about Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
+				.footer__copyright.footer__copyright_color_gray 2016 Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool

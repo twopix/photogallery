@@ -1,0 +1,65 @@
+.header {
+	position: relative;
+
+	overflow: hidden;
+
+	height: 30rem;
+
+	&__bg {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 50%;
+
+		display: block;
+
+		min-width: 100%;
+		max-width: none;
+		height: auto;
+		min-height: 55rem;
+
+		transform: translateX(-50%);
+	}
+	&__wrap {
+		font-size: 0;
+
+		position: relative;
+		z-index: 3;
+
+		box-sizing: border-box;
+		max-width: $max-width;
+		height: 24rem;
+		margin: auto;
+		padding: 0 3.5rem;
+		&:after {
+			display: inline-block;
+			overflow: hidden;
+
+			width: 0;
+			height: 100%;
+
+			content: "";
+			vertical-align: middle;
+		}
+	}
+	&__search {
+		position: relative;
+		z-index: 3;
+		
+		height: 6rem;
+	}
+	&:after {
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		display: block;
+
+		content: "";
+
+		background: linear-gradient(to right, rgba(0,0,0,.3) 0%, rgba(0,0,0,0) 100%);
+	}
+}

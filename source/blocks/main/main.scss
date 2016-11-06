@@ -1,0 +1,19 @@
+.main {
+	display: table-row;
+
+	height: 100%;
+	&__wrap {
+		box-sizing: border-box;
+		max-width: 160rem;
+		margin: auto;
+		padding: 5rem 3.5rem;
+		&_middle {
+			display: table-cell;
+
+			vertical-align: middle;
+		}
+		&_center {
+			text-align: center;
+		}
+	}
+}
