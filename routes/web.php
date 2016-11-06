@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('index');
 });
+//remove after!!!
+Route::get('test', function () {
+    return view('pages/index');
+});
 
 Route::group(['prefix' => 'api'], function()
 {
