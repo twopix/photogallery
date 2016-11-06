@@ -14,12 +14,10 @@
         <meta content="IE=edge" http-equiv="x-ua-compatible">
         <meta name="format-detection" content="telephone=no">
         <meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
-        <link rel="icon" href="./assets/img/favicon.png" type="image/png">
+        <link rel="icon" href="img/favicon.png" type="image/png">
         <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png">
-        <link rel="stylesheet" href="./assets/css/foundation.css">
-        <link rel="stylesheet" href="./assets/css/app.css">
-        <script src="./assets/js/foundation.js" defer>
-        <script src="./assets/js/app.js" defer></script>
+        <link rel="stylesheet" href="css/foundation.css">
+        <link rel="stylesheet" href="css/app.css">
 
 
         <!--[if lt IE 9]>
@@ -27,10 +25,19 @@
         <![endif]-->
 
     </head>
-    <body>
+    <body ng-app="authApp">
         @section('content')
 
-            section content
         @show
     </body>
+    <!-- Application Dependencies -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/satellizer.js"></script>
+
+    <!-- Application Scripts -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/authController.js"></script>
+    <script src="app/controllers/userController.js"></script>
+
 </html>

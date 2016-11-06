@@ -9,30 +9,7 @@
                 <h1 class="title title_color-white">Добро пожаловать</h1>
             </div>
             <div class="welcome__text">Перед вами сервис, который поможет вам организовать свои фотографии <br />в альбомы и поделиться ими со всем миром!</div>
-            <div class="welcome__form-wrap">
-                <form class="welcome__form form" action="" method="post">
-                    <label class="form__row welcome__form-row">
-                        <input class="input-text input-text_full-width input-text_rect input-text_with-icon" type="mail" placeholder="Электронная почта" required>
-                        <svg class="svg-icon svg-icon_envelope" role="img">
-                            <use xlink:href="./assets/img/sprite.svg#envelope"></use>
-                        </svg>
-                    </label>
-                    <label class="form__row welcome__form-row">
-                        <input class="input-text input-text_full-width input-text_rect input-text_with-icon" type="password" placeholder="Пароль" required>
-                        <svg class="svg-icon svg-icon_password" role="img">
-                            <use xlink:href="./assets/img/sprite.svg#password"></use>
-                        </svg>
-                    </label>
-                    <div class="form__row form__helper"> <a class="form__helper-lnk" href="#" title="">Забыли пароль?</a></div>
-                    <div class="form__tip">
-                        <div class="form__tip-message">E-mail или пароль не верен</div>
-                    </div>
-                    <div class="form__row form__btns">
-                        <button class="btn btn_full-width btn_flat">Войти</button>
-                    </div>
-                    <div class="form__row form__helper form__helper_center">Нет аккаунта? <a class="form__helper-lnk" href="#" title="">Зарегистрироваться</a></div>
-                </form>
-            </div>
+            <div ui-view></div>
             <div class="welcome__form-wrap">
                 <form class="welcome__form form" action="" method="post">
                     <label class="form__row welcome__form-row">
