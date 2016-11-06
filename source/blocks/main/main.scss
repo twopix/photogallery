@@ -2,11 +2,13 @@
 	display: table-row;
 
 	height: 100%;
-	&__wrap {
-		box-sizing: border-box;
-		max-width: 160rem;
-		margin: auto;
+	&__section {
 		padding: 5rem 3.5rem;
+		&-wrap {
+			box-sizing: border-box;
+			max-width: 160rem;
+			margin: auto;
+		}
 		&_middle {
 			display: table-cell;
 
