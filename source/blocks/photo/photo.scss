@@ -1,0 +1,221 @@
+.photo {
+	overflow: hidden;
+
+	border-radius: .5rem;
+	box-shadow: 0 .1rem .4rem rgba(0,0,0,.15);
+	&__pic {
+		position: relative;
+
+		display: block;
+		overflow: hidden;
+
+		height: 25rem;
+		img {
+			display: block;
+
+			min-width: 100%;
+			max-width: none;
+			height: auto;
+			min-height: 100%;
+		}
+		&-zoom {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			transition: background-color .2s;
+
+			background: rgba(#000,0);
+			.svg-icon {
+				font-size: 4rem;
+
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+
+				margin: auto;
+
+				transition: transform .2s, color .2s;
+				transform: translateY(-200%);
+
+				color: rgba(#fff,0);
+			}
+			&:hover {
+				background: rgba(#000,.5);
+				.svg-icon {
+					transform: translateY(0);
+
+					color: rgba(#fff,1);
+				}
+			}
+		}
+	}
+	&__info {
+		font-size: 0;
+
+		display: block;
+
+		padding: .3rem 2rem;
+	}
+	&__user {
+		position: relative;
+
+		display: inline-block;
+		overflow: hidden;
+
+		width: 5rem;
+		height: 5rem;
+		margin: 0 2rem 0 0;
+
+		vertical-align: middle;
+
+		border-radius: 50%;
+		&-zoom {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			transition: background-color .2s;
+
+			border-radius: 50%;
+			background: rgba(#000,0);
+			.svg-icon {
+				font-size: 2rem;
+
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+
+				margin: auto;
+
+				transition: transform .2s, color .2s;
+				transform: translateY(-200%);
+
+				color: rgba(#fff,0);
+			}
+			&:hover {
+				background: rgba(#000,.5);
+				.svg-icon {
+					transform: translateY(0);
+
+					color: rgba(#fff,1);
+				}
+			}
+		}
+	}
+	&__info-wrap {
+		display: inline-block;
+		overflow: hidden;
+
+		width: calc(100% - 7rem);
+
+		vertical-align: middle;
+	}
+	&__name {
+		font-size: 1.6rem;
+
+		overflow: hidden;
+
+		margin: 1.4rem 0;
+
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	&__actions {
+		margin: 1.4rem 0;
+	}
+	&__action {
+		font-family: $default-font-special;
+
+		display: inline-block;
+
+		margin: 0 2rem 0 0;
+		padding: 0;
+
+		cursor: pointer;
+		vertical-align: middle;
+
+		color: rgba(#323232, .8);
+		border: 0;
+		background: none;
+		.svg-icon,
+		&-name {
+			font-size: 1.6rem;
+
+			display: inline-block;
+
+			vertical-align: middle;
+		}
+		.svg-icon {
+			font-size: 2rem;
+
+			margin: 0 1rem 0 0;
+
+			transition: color .2s;
+
+			color: rgba(#323232, .2);
+		}
+		&:hover {
+			.svg-icon {
+				color: rgba(#323232, .8);
+			}
+		}
+	}
+	&__album {
+		font-family: $default-font-bold;
+		font-size: 0;
+
+		padding: 1rem 2rem;
+
+		text-align: right;
+
+		background: #f6f6f6;
+		.svg-icon,
+		&-title {
+			font-size: 1.6rem;
+
+			display: inline-block;
+
+			vertical-align: middle;
+
+			color: rgba(#323232, .8);
+		}
+		.svg-icon {
+			font-size: 2.2rem;
+
+			margin: 0 .8rem 0 0;
+
+			transition: color .2s;
+
+			color: rgba(#323232, .2);
+		}
+		&-title {
+			overflow: hidden;
+
+			max-width: calc(100% - 3rem);
+
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		&-link {
+			transition: color .2s;
+
+			color: #323232;
+			&:hover {
+				.svg-icon {
+					color: rgba(#323232, .8);
+				}
+			}
+		}
+	}
+}
