@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "postinstall": "bower install && composer install && cp .env.example .env && php artisan key:generate",
+    "postinstall": "bower install && composer install && php artisan key:generate",
     "prod": "gulp --production",
     "dev": "gulp watch",
     "start": "php artisan serve | gulp"
