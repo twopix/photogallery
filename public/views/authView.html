@@ -13,8 +13,8 @@
             </svg>
         </label>
         <div class="form__row form__helper"> <a class="form__helper-lnk" href="#" title="">Забыли пароль?</a></div>
-        <div class="form__tip" ng-if="user.error">
-            <div class="form__tip-message">E-mail или пароль не верен  {{user.error.error}}</div>
+        <div class="form__tip" ng-if="auth.error">
+            <div class="form__tip-message">E-mail или пароль не верен</div>
         </div>
         <div class="form__row form__btns">
             <button class="btn btn_full-width btn_flat" ng-click="auth.login()">Войти</button>

@@ -23,6 +23,8 @@
 
                 // If login is successful, redirect to the users state
                 $state.go('users', {});
+            }).catch(function (data) {
+                vm.error = data.data.error;
             });
         }
 
