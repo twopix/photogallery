@@ -12,11 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('index');
-});
-//remove after!!!
-Route::get('test', function () {
-    return view('pages/index');
+    return view('pages.index');
 });
 
 Route::group(['prefix' => 'api'], function()
@@ -39,4 +35,3 @@ Route::group(array('prefix' => 'api/v1'), function() {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');

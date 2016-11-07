@@ -1,7 +1,3 @@
-{{--@section ('variables')--}}
-{{--- var config = {defaultTitle : 'Заголовок по-умолчанию'}--}}
-
-{{--include common/pug/_mixins--}}
 <!doctype html>
 <html>
     <head>
@@ -14,10 +10,9 @@
         <meta content="IE=edge" http-equiv="x-ua-compatible">
         <meta name="format-detection" content="telephone=no">
         <meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
-        <link rel="icon" href="img/favicon.png" type="image/png">
-        <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/png">
-        <link rel="stylesheet" href="css/foundation.css">
-        <link rel="stylesheet" href="css/app.css">
+        <link rel="icon" href="favicon.png" type="image/png">
+        <link rel="shortcut icon" href="favicon.png" type="image/png">
+        <link rel="stylesheet" href="assets/css/app.css">
 
 
         <!--[if lt IE 9]>
@@ -31,9 +26,10 @@
         @show
     </body>
     <!-- Application Dependencies -->
-    <script src="js/angular.min.js"></script>
-    <script src="js/angular-ui-router.js"></script>
-    <script src="js/satellizer.js"></script>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-ui-router.js"></script>
+    <script src="assets/js/satellizer.js"></script>
+    <script src="assets/js/foundation.js"></script>
 
     <!-- Application Scripts -->
     <script src="app/app.js"></script>
