@@ -1,0 +1,30 @@
+<div class="welcome__form-wrap">
+    <form class="welcome__form form">
+        <label class="form__row welcome__form-row">
+            <input class="input-text input-text_full-width input-text_rect input-text_with-icon" type="text" ng-model="reg.name" placeholder="Имя" required>
+            <svg class="svg-icon svg-icon_name" role="img">
+                <use xlink:href="./assets/img/sprite.svg#name"></use>
+            </svg>
+        </label>
+        <label class="form__row welcome__form-row">
+            <input class="input-text input-text_full-width input-text_rect input-text_with-icon" type="email" ng-model="reg.email" placeholder="Электронная почта" required>
+            <svg class="svg-icon svg-icon_envelope" role="img">
+                <use xlink:href="./assets/img/sprite.svg#envelope"></use>
+            </svg>
+        </label>
+        <label class="form__row welcome__form-row">
+            <input class="input-text input-text_full-width input-text_rect input-text_with-icon" type="password" ng-model="reg.password" placeholder="Пароль" required>
+            <svg class="svg-icon svg-icon_password" role="img">
+                <use xlink:href="./assets/img/sprite.svg#password"></use>
+            </svg>
+        </label>
+        <div class="form__row form__helper">Ваши данные остаются строго конфеденциальны</div>
+        <div class="form__tip" ng-if="reg.error">
+            <div class="form__tip-message">E-mail или пароль не верен {{ reg.error }}</div>
+        </div>
+        <div class="form__row form__btns">
+            <button class="btn btn_full-width btn_flat"  ng-click="reg.signup()">Создать аккаунт</button>
+        </div>
+        <div class="form__row form__helper form__helper_center">Уже зарегистрированы? <a class="form__helper-lnk" href="#" title="">Войти</a></div>
+    </form>
+</div>

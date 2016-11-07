@@ -35,5 +35,5 @@
     <script src="app/app.js"></script>
     <script src="app/controllers/authController.js"></script>
     <script src="app/controllers/userController.js"></script>
-
+    <script src="app/controllers/regController.js"></script>
 </html>
