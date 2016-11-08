@@ -39,4 +39,12 @@ class User extends Authenticatable
     {
       return $this->hasMany('App\Album', 'owner_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function photos()
+    {
+      return $this->hasMany('App\Photo', 'owner_id');
+    }
 }

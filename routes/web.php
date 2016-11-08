@@ -24,13 +24,23 @@ Route::get('show/{id}', 'AlbumController@show');
 Route::get('edit/{id}', 'AlbumController@edit');
 Route::post('update/{id}', 'AlbumController@update');
 Route::get('destroy/{id}', 'AlbumController@destroy');*/
+/*Route::get('album/{album}/index', 'PhotoController@index');
+Route::get('album/{album}/create', 'PhotoController@create');
+Route::post('album/{album}/store', 'PhotoController@store');
+Route::get('album/{album}/show/{id}', 'PhotoController@show');
+Route::get('album/{album}/edit/{id}', 'PhotoController@edit');
+Route::post('album/{album}/update/{id}', 'PhotoController@update');
+Route::get('album/{album}/destroy/{id}', 'PhotoController@destroy');*/
+
 
 Route::group(['prefix' => 'api'], function()
 {
     Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
     Route::post('authenticate', 'AuthenticateController@authenticate');
     Route::post('signup', 'RegisterController@create');
+
     Route::resource('album', 'AlbumController', ['except' => ['create, edit']]);
+    Route::resource('album/{album}/photo', 'PhotoController', ['except' => ['create, edit']]);
 });
 
 Route::group(array('prefix' => 'api/v1'), function() {
@@ -45,5 +55,5 @@ Route::group(array('prefix' => 'api/v1'), function() {
 
 });
 
-Auth::routes();
+//Auth::routes();
 

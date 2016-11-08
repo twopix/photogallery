@@ -25,4 +25,13 @@ class Album extends Model
   {
     return $this->belongsTo('App\User', 'owner_id');
   }
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function photos()
+  {
+    return $this->hasMany('App\Photo');
+  }
 }
