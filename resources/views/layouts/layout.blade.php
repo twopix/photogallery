@@ -24,17 +24,18 @@
         @section('content')
 
         @show
-    </body>
-    <!-- Application Dependencies -->
-    <script src="assets/js/angular.min.js"></script>
-    <script src="assets/js/angular-ui-router.js"></script>
-    <script src="assets/js/satellizer.js"></script>
-    <script src="assets/js/angular-animate.min.js"></script>
-    <script src="assets/js/foundation.js"></script>
 
-    <!-- Application Scripts -->
-    <script src="app/app.js"></script>
-    <script src="app/controllers/authController.js"></script>
-    <script src="app/controllers/userController.js"></script>
-    <script src="app/controllers/regController.js"></script>
+        <!-- Application Dependencies -->
+        <script src="assets/js/angular.min.js"></script>
+        <script src="assets/js/angular-ui-router.js"></script>
+        <script src="assets/js/satellizer.js"></script>
+        <script src="assets/js/angular-animate.min.js"></script>
+        <script src="assets/js/foundation.js"></script>
+
+        <!-- Application Scripts -->
+        <script src="app/app.js"></script>
+        <script src="app/controllers/authController.js"></script>
+        <script src="app/controllers/userController.js"></script>
+        <script src="app/controllers/regController.js"></script>
+    </body>
 </html>

@@ -33,6 +33,12 @@
                     url: '/users',
                     templateUrl: 'app/views/userView.html',
                     controller: 'UserController as user'
+                })
+                .state('main', {
+                    name: 'main',
+                    url: '/main',
+                    templateUrl: 'app/views/main.html',
+                    controller: 'MainController as main'
                 });
         });
 })();

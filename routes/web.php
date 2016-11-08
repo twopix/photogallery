@@ -32,6 +32,11 @@ Route::get('album/{album}/edit/{id}', 'PhotoController@edit');
 Route::post('album/{album}/update/{id}', 'PhotoController@update');
 Route::get('album/{album}/destroy/{id}', 'PhotoController@destroy');*/
 
+//get main page 
+Route::get('main', function()
+{
+    return View('pages.main');
+});
 
 Route::group(['prefix' => 'api'], function()
 {
