@@ -1,0 +1,162 @@
+.album {
+	overflow: hidden;
+
+	border-radius: .5rem;
+	box-shadow: 0 .1rem .4rem rgba(0,0,0,.15);
+	&__pic {
+		position: relative;
+
+		display: block;
+		overflow: hidden;
+
+		height: 28rem;
+		img {
+			display: block;
+
+			min-width: 100%;
+			max-width: none;
+			height: auto;
+			min-height: 100%;
+		}
+	}
+	&__resume {
+		position: absolute;
+		top:0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+
+		display: block;
+		overflow: hidden;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+
+		transition: background-color .3s, box-shadow .3s;
+
+		color: #fff;
+		background: rgba(0,0,0,0);
+		box-shadow: 0 0 5rem rgba(0,0,0,0) inset;
+	}
+	&__count {
+		font-family: $default-font-special;
+		font-size: 1.6rem;
+
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		display: block;
+		overflow: hidden;
+
+		box-sizing: border-box;
+		padding: 3.7rem 2rem;
+
+		transition: transform .3s;
+		transform: translateX(-100%);
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		&-value {
+			display: block;
+			float: left;
+
+			margin: 0 .4rem 0 0;
+		}
+	}
+	&__descr {
+		font-size: 1.6rem;
+		line-height: 1.5;
+
+		position: absolute;
+		right: 0;
+		bottom: 8.5rem;
+		left: 0;
+
+		display: block;
+		overflow: hidden;
+
+		box-sizing: border-box;
+		box-sizing: border-box;
+		max-height: calc(100% - 11.2rem);
+		padding: 0 2rem;
+
+		transition: transform .3s;
+		transform: translateX(-100%);
+		text-overflow: ellipsis;
+	}
+	&__pic:hover &__resume {
+		background-color: rgba(0,0,0,.4);
+		box-shadow: 0 0 5rem rgba(0,0,0,.2) inset;
+	}
+	&__pic:hover &__descr {
+		transform: translateX(0);
+	}
+	&__pic:hover &__count {
+		transform: translateX(0);
+	}
+	&__info {
+		font-size: 0;
+
+		display: block;
+
+		padding: .1rem 2rem;
+	}
+	&__name {
+		font-family: $default-font-bold;
+		font-size: 1.6rem;
+
+		display: inline-block;
+		overflow: hidden;
+
+		width: calc(100% - 4.2rem);
+		margin: 1.4rem 0;
+
+		text-align: right;
+		vertical-align: middle;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		&:hover {
+			color: #28bbf0;
+		}
+	}
+	&__link {
+		transition: color .2s;
+		text-decoration: none;
+
+		color: currentColor;
+	}
+	&__actions {
+		display: inline-block;
+
+		margin: 1.4rem 0;
+
+		vertical-align: middle;
+	}
+	&__action {
+		font-family: $default-font-special;
+
+		display: inline-block;
+
+		margin: 0 2rem 0 0;
+		padding: 0;
+
+		cursor: pointer;
+		vertical-align: middle;
+
+		color: rgba(#323232, .8);
+		border: 0;
+		background: none;
+		.svg-icon {
+			font-size: 2.2rem;
+
+			transition: color .2s;
+
+			color: rgba(#323232, .2);
+		}
+		&:hover {
+			.svg-icon {
+				color: rgba(#323232, .8);
+			}
+		}
+	}
+}

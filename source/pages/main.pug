@@ -48,8 +48,8 @@ block content
 								input.input-text.input-text_with-icon.input-text_border_transparent.input-text_full-width(type="text" placeholder="Исследовать мир")
 								+svg('search')
 
-		main.main
-			.main__section
+		main.main.main_bgcolor_gray
+			.main__section.main__section_bgcolor_white
 				.photos.main__section-wrap
 					.title.photos__title Новое в мире
 					.photos__list
@@ -66,10 +66,10 @@ block content
 								.photo__info-wrap
 									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
 									.photo__actions
-										button.photo__action
+										button.photo__action.photo__action_comments
 											+svg('comments')
 											span.photo__action-name 4
-										button.photo__action
+										button.photo__action.photo__action_likes
 											+svg('like')
 											span.photo__action-name 32
 							.photo__album 
@@ -89,10 +89,10 @@ block content
 								.photo__info-wrap
 									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
 									.photo__actions
-										button.photo__action
+										button.photo__action.photo__action_comments
 											+svg('comments')
 											span.photo__action-name 4
-										button.photo__action
+										button.photo__action.photo__action_likes
 											+svg('like')
 											span.photo__action-name 32
 							.photo__album 
@@ -112,10 +112,10 @@ block content
 								.photo__info-wrap
 									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
 									.photo__actions
-										button.photo__action
+										button.photo__action.photo__action_comments
 											+svg('comments')
 											span.photo__action-name 4
-										button.photo__action
+										button.photo__action.photo__action_likes
 											+svg('like')
 											span.photo__action-name 32
 							.photo__album 
@@ -135,34 +135,10 @@ block content
 								.photo__info-wrap
 									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
 									.photo__actions
-										button.photo__action
+										button.photo__action.photo__action_comments
 											+svg('comments')
 											span.photo__action-name 4
-										button.photo__action
-											+svg('like')
-											span.photo__action-name 32
-							.photo__album 
-								a.photo__album-link(href="" title="")
-									+svg('album')
-									span.photo__album-title Прогулки по воде
-
-						.photo.photos__item
-							a.photo__pic(href="" title="")
-								img(src="./assets/img/photo.jpg" alr="" title="")
-								.photo__pic-zoom
-									+svg('loupe')
-							.photo__info
-								a.photo__user(href="" title="")
-									img(src="./assets/img/user-pic.jpg" alt="")
-									.photo__user-zoom
-										+svg('more')
-								.photo__info-wrap
-									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
-									.photo__actions
-										button.photo__action
-											+svg('comments')
-											span.photo__action-name 4
-										button.photo__action
+										button.photo__action.photo__action_likes
 											+svg('like')
 											span.photo__action-name 32
 							.photo__album 
@@ -182,10 +158,10 @@ block content
 								.photo__info-wrap
 									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
 									.photo__actions
-										button.photo__action
+										button.photo__action.photo__action_comments
 											+svg('comments')
 											span.photo__action-name 4
-										button.photo__action
+										button.photo__action.photo__action_likes
 											+svg('like')
 											span.photo__action-name 32
 							.photo__album 
@@ -205,10 +181,10 @@ block content
 								.photo__info-wrap
 									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
 									.photo__actions
-										button.photo__action
+										button.photo__action.photo__action_comments
 											+svg('comments')
 											span.photo__action-name 4
-										button.photo__action
+										button.photo__action.photo__action_likes
 											+svg('like')
 											span.photo__action-name 32
 							.photo__album 
@@ -228,20 +204,102 @@ block content
 								.photo__info-wrap
 									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
 									.photo__actions
-										button.photo__action
+										button.photo__action.photo__action_comments
 											+svg('comments')
 											span.photo__action-name 4
-										button.photo__action
+										button.photo__action.photo__action_likes
 											+svg('like')
 											span.photo__action-name 32
 							.photo__album 
 								a.photo__album-link(href="" title="")
 									+svg('album')
 									span.photo__album-title Прогулки по воде
+						.photo.photos__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__pic-zoom
+									+svg('loupe')
+							.photo__info
+								a.photo__user(href="" title="")
+									img(src="./assets/img/user-pic.jpg" alt="")
+									.photo__user-zoom
+										+svg('more')
+								.photo__info-wrap
+									.photo__name Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+									.photo__actions
+										button.photo__action.photo__action_comments
+											+svg('comments')
+											span.photo__action-name 4
+										button.photo__action.photo__action_likes
+											+svg('like')
+											span.photo__action-name 32
+							.photo__album 
+								a.photo__album-link(href="" title="")
+									+svg('album')
+									span.photo__album-title Прогулки по воде
+						
 					.photos__more
 						button.btn.btn_flat.btn_bg_transparent Показать еще
 			.main__section
-				.main__section-wrap efwef
+				.albums.main__section-wrap
+					.title.albums__title Мои альбомы
+					.albums__list
+						.album.albums__item
+							a.album__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.album__resume
+									.album__descr Фотографии природы леса, енотов и оленей
+									.album__count
+										span.album__count-value 18
+										span Фотографий
+							.album__info
+								.album__actions
+									button.album__action
+										+svg('edit')
+								.album__name 
+									a.album__link(href="" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						.album.albums__item
+							a.album__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.album__resume
+									.album__descr Фотографии природы леса, енотов и оленей
+									.album__count
+										span.album__count-value 18
+										span Фотографий
+							.album__info
+								.album__actions
+									button.album__action
+										+svg('edit')
+								.album__name 
+									a.album__link(href="" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						.album.albums__item
+							a.album__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.album__resume
+									.album__descr Фотографии природы леса, енотов и оленей
+									.album__count
+										span.album__count-value 18
+										span Фотографий
+							.album__info
+								.album__actions
+									button.album__action
+										+svg('edit')
+								.album__name 
+									a.album__link(href="" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						.album.albums__item
+							a.album__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.album__resume
+									.album__descr Фотографии природы леса, енотов и оленей
+									.album__count
+										span.album__count-value 18
+										span Фотографий
+							.album__info
+								.album__actions
+									button.album__action
+										+svg('edit')
+								.album__name 
+									a.album__link(href="" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
 
 
 

@@ -3,6 +3,7 @@
 
 	height: 100%;
 	&__section {
+
 		padding: 5rem 3.5rem;
 		&-wrap {
 			box-sizing: border-box;
@@ -17,5 +18,14 @@
 		&_center {
 			text-align: center;
 		}
+		&_bgcolor_gray {
+			background-color: #f6f6f6;
+		}
+		&_bgcolor_white {
+			background-color: #fff;
+		}
+	}
+	&_bgcolor_gray {
+		background-color: #f6f6f6;
 	}
 }

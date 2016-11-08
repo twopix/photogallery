@@ -1,0 +1,20 @@
+.albums {
+	&__title {
+		margin: 0 0 3.1rem;
+	}
+	&__list {
+		font-size: 0;
+
+		margin: -1rem;
+	}
+	&__item {
+		margin: 1rem;
+		width:calc(33.33% - 2rem);
+		display:inline-block;
+		vertical-align:top;
+	}
+	&__more {
+		text-align:center;
+		margin-top:2rem;
+	}
+}
