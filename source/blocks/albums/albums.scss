@@ -1,6 +1,11 @@
 .albums {
+	position:relative;
 	&__title {
 		margin: 0 0 3.1rem;
+	}
+	&__add {
+		position:absolute;
+		right:0;top:0;
 	}
 	&__list {
 		font-size: 0;
