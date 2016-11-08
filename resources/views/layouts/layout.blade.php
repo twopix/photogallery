@@ -29,6 +29,7 @@
     <script src="assets/js/angular.min.js"></script>
     <script src="assets/js/angular-ui-router.js"></script>
     <script src="assets/js/satellizer.js"></script>
+    <script src="assets/js/angular-animate.min.js"></script>
     <script src="assets/js/foundation.js"></script>
 
     <!-- Application Scripts -->
