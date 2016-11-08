@@ -19,19 +19,19 @@
                 .state('auth', {
                     name: 'auth',
                     url: '/auth',
-                    templateUrl: '../views/authView.html',
+                    templateUrl: 'app/views/authView.html',
                     controller: 'AuthController as auth'
                 })
                 .state('reg', {
                   name: 'reg',
                   url: '/registration',
-                  templateUrl: '../views/regView.html',
+                  templateUrl: 'app/views/regView.html',
                   controller: 'RegController as reg'
                 })
                 .state('users', {
                     name: 'users',
                     url: '/users',
-                    templateUrl: '../views/userView.html',
+                    templateUrl: 'app/views/userView.html',
                     controller: 'UserController as user'
                 });
         });
