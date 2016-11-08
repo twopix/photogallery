@@ -6,7 +6,7 @@ Homestead.json
 Homestead.yaml
 .env
 composer.phar
-
+_ide_helper.php
 
 # Numerous always-ignore extensions
 *.bak
