@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('authApp', ['ui.router', 'satellizer'])
+        .module('authApp', ['ui.router', 'satellizer', 'ngAnimate'])
         .config(function($stateProvider, $urlRouterProvider, $authProvider) {
 
             // Satellizer configuration that specifies which API
