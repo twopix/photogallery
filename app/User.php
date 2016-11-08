@@ -31,4 +31,12 @@ class User extends Authenticatable
     {
       $this->attributes['password'] = bcrypt($value);
     }
+
+  /**
+   * A user can have many albums
+   */
+    public function albums()
+    {
+      return $this->hasMany('App\Album');
+    }
 }

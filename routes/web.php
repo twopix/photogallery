@@ -15,11 +15,22 @@ Route::get('/', function () {
     return view('pages.index');
 });
 
+// This routs only for testing
+// Do not use in production
+/*Route::get('index', 'AlbumController@index');
+Route::get('create', 'AlbumController@create');
+Route::post('store', 'AlbumController@store');
+Route::get('show/{id}', 'AlbumController@show');
+Route::get('edit/{id}', 'AlbumController@edit');
+Route::post('update/{id}', 'AlbumController@update');
+Route::get('destroy/{id}', 'AlbumController@destroy');*/
+
 Route::group(['prefix' => 'api'], function()
 {
     Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
     Route::post('authenticate', 'AuthenticateController@authenticate');
     Route::post('signup', 'RegisterController@create');
+    Route::resource('album', 'AlbumController', ['except' => ['create, edit']]);
 });
 
 Route::group(array('prefix' => 'api/v1'), function() {
