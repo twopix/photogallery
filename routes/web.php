@@ -15,23 +15,6 @@ Route::get('/', function () {
     return view('pages.index');
 });
 
-// This routs only for testing
-// Do not use in production
-/*Route::get('index', 'AlbumController@index');
-Route::get('create', 'AlbumController@create');
-Route::post('store', 'AlbumController@store');
-Route::get('show/{id}', 'AlbumController@show');
-Route::get('edit/{id}', 'AlbumController@edit');
-Route::post('update/{id}', 'AlbumController@update');
-Route::get('destroy/{id}', 'AlbumController@destroy');*/
-/*Route::get('album/{album}/index', 'PhotoController@index');
-Route::get('album/{album}/create', 'PhotoController@create');
-Route::post('album/{album}/store', 'PhotoController@store');
-Route::get('album/{album}/show/{id}', 'PhotoController@show');
-Route::get('album/{album}/edit/{id}', 'PhotoController@edit');
-Route::post('album/{album}/update/{id}', 'PhotoController@update');
-Route::get('album/{album}/destroy/{id}', 'PhotoController@destroy');*/
-
 //get main page 
 Route::get('main', function()
 {
@@ -71,5 +54,4 @@ Route::group(array('prefix' => 'api/v1'), function() {
 
 });
 
-//Auth::routes();
 
