@@ -38,17 +38,25 @@ Route::get('main', function()
     return View('pages.main');
 });
 
+/*
+ DON'T FORGET: for use patch, put or delete methods
+ You must use post method with hidden variable '_method' with value PATCH, PUT or DELETE
+*/
+
 Route::group(['prefix' => 'api'], function()
 {
     Route::resource('authenticate', 'AuthenticateController', ['only' => ['index']]);
     Route::post('authenticate', 'AuthenticateController@authenticate');
     Route::post('signup', 'RegisterController@create');
 
-    Route::resource('album', 'AlbumController', ['except' => ['create, edit']]);
-    Route::resource('album/{album}/photo', 'PhotoController', ['except' => ['create, edit']]);
+    Route::resource('album', 'AlbumController', ['except' => ['create', 'edit']]);
+
+    Route::resource('album/{album}/photo', 'PhotoController', ['except' => ['create', 'edit']]);
     Route::get('album/{album}/photo/{id}/like', 'PhotoController@setLike');
     Route::get('album/{album}/photo/{id}/is_liked_by_user', 'PhotoController@isLikedByUser');
     Route::get('album/{album}/photo/{id}/unlike', 'PhotoController@removeLike');
+
+    Route::resource('/photo/{id}/comment', 'CommentController', ['except' => ['create', 'edit']]);
 });
 
 Route::group(array('prefix' => 'api/v1'), function() {
