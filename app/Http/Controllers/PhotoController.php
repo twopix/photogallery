@@ -144,7 +144,18 @@ class PhotoController extends Controller
             ]);
         }
 
-        return Like::create(['photo_id' => $id, 'user_id' => Auth::user()->id]);
+
+
+        $newLike = Like::create(['photo_id' => $id, 'user_id' => Auth::user()->id]);
+
+        $newLikeResponse = $newLike->toJson();
+
+        // update total likes
+        $photo = $newLike->photo;
+        $photo->likes++;
+        $photo->save();
+
+        return $newLikeResponse;
     }
 
     public function isLikedByUser($album, $id)
@@ -158,5 +169,45 @@ class PhotoController extends Controller
                 'isLiked' => !empty($likeExist)
                 ]
         ]);
+    }
+
+    public function removeLike($album, $id)
+    {
+        $like = Like::where('photo_id', $id)->where('user_id', Auth::user()->id)->first();
+
+        if( empty($like) )
+        {
+            return response()->json([
+                'status' => 'success',
+                'error' => 1,
+                'error_message' => 'Такого лайка не существует'
+            ]);
+        }
+
+        // update total likes
+        $photo = $like->photo;
+        $photo->likes--;
+        $photo->save();
+
+        $isDeleted = $like->delete();
+
+        if($isDeleted)
+        {
+            return response()->json([
+                'status' => 'success',
+                'error' => 0,
+                'result' => [
+                    'isDeleted' => true
+                ]
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status' => 'success',
+                'error' => 1,
+                'error_message' => 'Произошла непредвиденная ошибка'
+            ]);
+        }
     }
 }
