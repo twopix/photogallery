@@ -46,6 +46,8 @@ Route::group(['prefix' => 'api'], function()
 
     Route::resource('album', 'AlbumController', ['except' => ['create, edit']]);
     Route::resource('album/{album}/photo', 'PhotoController', ['except' => ['create, edit']]);
+    Route::get('album/{album}/photo/{id}/like', 'PhotoController@setLike');
+    Route::get('album/{album}/photo/{id}/is_liked_by_user', 'PhotoController@isLikedByUser');
 });
 
 Route::group(array('prefix' => 'api/v1'), function() {

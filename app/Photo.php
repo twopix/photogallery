@@ -28,6 +28,11 @@ class Photo extends Model
      */
     public function user()
     {
-    return $this->belongsTo('App\User', 'owner_id');
+        return $this->belongsTo('App\User', 'owner_id');
+    }
+
+    public function likes()
+    {
+        return $this->hasMany('App\Like');
     }
 }

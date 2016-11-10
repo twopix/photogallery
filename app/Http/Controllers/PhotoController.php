@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Album;
+use App\Like;
 use App\Photo;
 use App\User;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class PhotoController extends Controller
      */
     public function __construct()
     {
-        //$this->middleware('jwt.auth');
+        $this->middleware('jwt.auth');
     }
 
     /**
@@ -128,5 +129,34 @@ class PhotoController extends Controller
     public function destroy($album, $id)
     {
         return Photo::destroy($id);
+    }
+
+    public function setLike($album, $id)
+    {
+        $likeExist = Like::where('photo_id', $id)->where('user_id', Auth::user()->id)->first();
+
+        if( !empty($likeExist) )
+        {
+            return response()->json([
+                'status' => 'success',
+                'error' => 1,
+                'error_message' => 'Вы уже лайкнули данную фотографию'
+            ]);
+        }
+
+        return Like::create(['photo_id' => $id, 'user_id' => Auth::user()->id]);
+    }
+
+    public function isLikedByUser($album, $id)
+    {
+        $likeExist = Like::where('photo_id', $id)->where('user_id', Auth::user()->id)->first();
+
+        return response()->json([
+            'status' => 'success',
+            'error' => 0,
+            'result' => [
+                'isLiked' => !empty($likeExist)
+                ]
+        ]);
     }
 }
