@@ -32,14 +32,21 @@ Route::group(['prefix' => 'api'], function()
     Route::post('authenticate', 'AuthenticateController@authenticate');
     Route::post('signup', 'RegisterController@create');
 
-    Route::resource('album', 'AlbumController', ['except' => ['create', 'edit']]);
+	Route::group(['middleware' => ['jwt.auth']], function() {
 
-    Route::resource('album/{album}/photo', 'PhotoController', ['except' => ['create', 'edit']]);
-    Route::get('album/{album}/photo/{id}/like', 'PhotoController@setLike');
-    Route::get('album/{album}/photo/{id}/is_liked_by_user', 'PhotoController@isLikedByUser');
-    Route::get('album/{album}/photo/{id}/unlike', 'PhotoController@removeLike');
+		Route::resource('album', 'AlbumController', ['except' => ['create', 'edit']]);
 
-    Route::resource('/photo/{id}/comment', 'CommentController', ['except' => ['create', 'edit']]);
+		Route::resource('album/{album}/photo', 'PhotoController', ['except' => ['create', 'edit']]);
+		Route::get('album/{album}/photo/{id}/like', 'PhotoController@setLike');
+		Route::get('album/{album}/photo/{id}/is_liked_by_user', 'PhotoController@isLikedByUser');
+		Route::get('album/{album}/photo/{id}/unlike', 'PhotoController@removeLike');
+
+		Route::resource('/photo/{id}/comment', 'CommentController', ['except' => ['create', 'edit']]);
+
+		Route::get('upload', 'FileUploadController@index'); //temp
+		Route::post('upload', 'FileUploadController@store');
+
+	});
 });
 
 Route::group(array('prefix' => 'api/v1'), function() {

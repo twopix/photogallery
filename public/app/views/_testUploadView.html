@@ -1,0 +1,100 @@
+<div class="upload__form-wrap" style="width: 300px;">
+    <form class="upload__form form" ng-controller="FileUploadController" name="uploadForm" method="post" enctype="multipart/form-data" novalidate data-type="profile"><!-- action=""-->
+		<!--<input type="hidden" name="_token" value="{{ csrf_token() }}">-->
+		<input type="hidden" name="type" ng-model="type" ng-init="type = 'profile'">
+		<h2>Загрузка одного изображения с валидацией</h2>
+		<label class="form__row upload__form-row">
+			<input class="input-text input-text_full-width input-text_rect input-text_with-icon" type="file" name="file"
+				   accept="image/*" required capture="camera"
+				   ngf-select ng-model="uploadFile" ngf-model-invalid="errorFile"
+				   ngf-max-size="200KB" ngf-min-height="100"> <!--ngf-resize="{width: 100, height: 100}"-->
+			<svg class="svg-icon svg-icon_name" role="img">
+				<use xlink:href="./assets/img/sprite.svg#name"></use>
+			</svg>
+			<!--<button ng-click="$log.log(errorFile)">Log</button>-->
+		</label>
+
+		<div ng-messages="uploadForm.file.$error" role="alert">
+			<div ng-message="minHeight">
+				Минимальная высота {{errorFile.$errorParam}}px.
+			</div>
+			<div ng-message="maxSize">
+				Размер загружаемого файла {{errorFile.size / 1000000|number:1}}MB (Максимальный размер {{errorFile.$errorParam}})
+			</div>
+			<div ng-message-exp="errorFile.$error">
+				{{errorFile.$error}} {{errorFile.$errorParam}}
+			</div>
+			<!--<div ng-message="required">Выберите файл</div>-->
+		</div>
+		<!--<div class="form__row">-->
+			<!--Image thumbnail: <img ngf-thumbnail="uploadFile || '/thumb.jpg'">-->
+		<!--</div>-->
+		<div class="form__row" ng-show="uploadForm.file.$valid">
+			<img ngf-thumbnail="uploadFile" class="thumb" ngf-size="{width: 100, height: 100, quality: 0.9}">
+			<button ng-click="uploadFile = null" ng-show="uploadFile" ng-hide="uploadFile.progress >= 0">Remove</button>
+			{{uploadFile.name}} {{uploadFile.$errorParam}}
+		  	<span class="progress" ng-show="uploadFile.progress >= 0">
+				<div style="width:{{uploadFile.progress}}%"
+					 ng-bind="uploadFile.progress + '%'"></div>
+		  	</span>
+			<span ng-show="uploadFile.result">Загружено успешно</span>
+			<span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+		</div>
+		<div class="form__row form__btns">
+			<button class="btn btn_full-width btn_flat"
+					ng-disabled="!uploadForm.$valid"
+					ng-click="submit()">Загрузить</button>
+			<!--<button class="btn btn_full-width btn_flat" ng-disabled="!uploadForm.$valid"-->
+			<!--ng-click="uploadFiles(uploadFile, $invalidFiles)">Загрузить</button>-->
+		</div>
+	</form>
+
+	<form class="upload__form form" ng-controller="FileUploadController" name="uploadMultipleForm" method="post" enctype="multipart/form-data" novalidate>
+		<!--<input type="hidden" name="_token" value="{{ csrf_token() }}">-->
+		<input type="hidden" name="type" ng-model="type" ng-init="type = 'album'">
+		<input type="hidden" name="obj_id" ng-model="obj_id" ng-init="obj_id = album_id || 1">
+		<h2>Мультизагрузка с дропзоной</h2>
+		<label class="form__row upload__form-row form__row_drop">
+			<input class="input-text input-text_full-width input-text_rect input-text_drop" type="file" name="files[]"
+				   multiple accept="image/*" required capture="camera"
+				   ngf-drop ngf-select ng-model="uploadFiles" ngf-model-invalid="errorFiles"
+				   ngf-max-size="200KB" ngf-drag-over-class="'input-text_drop-dragover'">
+			<!--ngf-drop ngf-select ng-model="uploadFiles" ngf-model-invalid="errorFiles" ngf-change="$log.log(uploadFiles,$invalidFiles)"-->
+		</label>
+		<div class="form__row"><!-- ng-show="uploadMultipleForm.files.$valid"-->
+			<div ng-show="uploadFiles">
+				Files:
+				<ul>
+					<li ng-repeat="f in uploadFiles" style="font:smaller">
+						<!--<span>{{k}} == {{$index}}</span>-->
+						<!--<span>{{f.name}} == {{uploadFiles[k]}} == {{uploadFiles[$index]}} == {{uploadFiles.$index}}</span>-->
+						<img ngf-thumbnail="f" class="thumb" ngf-size="{width: 100, height: 100, quality: 0.9}">
+						<button ng-click="uploadFiles.splice($index, 1)" ng-show="f" ng-hide="f.progress >= 0">Remove</button>
+						{{f.name}} {{f.$errorParam}}
+						<span class="progress" ng-show="f.progress >= 0">
+							<div style="width:{{f.progress}}%"
+								 ng-bind="f.progress + '%'"></div>
+						</span>
+						<span ng-show="f.result">Загружено успешно</span>
+					</li>
+				</ul>
+			</div>
+			<div ng-show="errorFiles">
+				Error files:
+				<ul>
+					<li ng-repeat="f in errorFiles" style="font:smaller">
+						<img ngf-thumbnail="f" class="thumb" ngf-size="{width: 100, height: 100, quality: 0.9}">
+						{{f.name}} {{f.$error}} {{f.$errorParam}}
+					</li>
+				</ul>
+				<button ng-click="$invalidFiles = []; errorFiles = []; uploadMultipleForm['files[]'].$error.maxSize = false; uploadMultipleForm['files[]'].validate();">Remove error files</button>
+			</div>
+		</div>
+		<div class="form__row form__btns">
+			<!--<button ng-click="$log.log(uploadMultipleForm, uploadFiles, errorFiles)">Log</button>-->
+			<button class="btn btn_full-width btn_flat"
+					ng-disabled="!uploadMultipleForm.$valid"
+					ng-click="submit()">Загрузить</button>
+		</div>
+	</form>
+</div>

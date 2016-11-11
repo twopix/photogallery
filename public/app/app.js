@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('authApp', ['ui.router', 'satellizer', 'ngAnimate'])
+        .module('authApp', ['ui.router', 'satellizer', 'ngAnimate', 'ngMessages', 'ngFileUpload'])
         .config(function($stateProvider, $urlRouterProvider, $authProvider) {
 
             // Satellizer configuration that specifies which API
@@ -39,6 +39,11 @@
                     url: '/main',
                     templateUrl: 'app/views/main.html',
                     controller: 'MainController as main'
-                });
+                })
+				.state('upload', {
+					url: '/upload',
+					templateUrl: 'app/views/_testUploadView.html',
+					controller: 'FileUploadController as fileUpload'
+				});
         });
 })();
