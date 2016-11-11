@@ -1,15 +1,77 @@
 .form {
 	position: relative;
+	&__group {
+		position: relative;
+		margin-top:2rem;
+		padding:3.5rem 0 0 0;
+		&:after {
+			content:"";
+			display:block;
+			position:absolute;
+			top:0;
+			left:-2rem;
+			right:-2rem;
+			height:.1rem;
+			background:#d6d6d6;
+		}
+	}
 	&__row {
 		line-height: 1;
 
 		position: relative;
 
-		display: block;
+		display: table;
+		width:100%;
+		max-width:100%;
 
 		margin: 0 0 1rem;
 		&:last-child {
 			margin: 0;
+		}
+		&-preview, &-name, &-el {
+			display:table-cell;
+			vertical-align:middle;	
+			table-layout: fixed;	
+			box-sizing:border-box;	
+		}
+		&-preview, &-name {
+			padding:0 2rem 0 0;
+			font-family: $default-font-bold;
+			font-size:1.6rem;
+			line-height:4rem;
+			text-align:right;
+			min-width:13rem;
+		}
+		&-preview {font-size:0;}
+		&-el {
+			width:100%;
+			overflow:hidden;
+			&_width_50 {
+				width:50%;
+				padding-right:1rem;
+				&:last-child {
+					padding-right:0;
+				}
+			}
+		}
+	}
+	&__preview-pic {
+		display: inline-block;
+		vertical-align:middle;	
+		width: 5.4rem;
+		height:5.4rem;
+		border-radius: 2.7rem;
+		overflow:hidden;
+	
+		img {
+			display:inline-block;
+			position:relative;
+			left:50%;
+			transform:translateX(-50%);
+			width:auto;
+			max-width:none;
+			height:auto;
+			max-height:100%;
 		}
 	}
 	&__title {

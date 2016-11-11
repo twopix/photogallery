@@ -3,7 +3,7 @@ block variables
 
 include common/pug/_mixins
 doctype html
-html
+html(class = rootClass)
     head
         meta(charset="utf-8")
         title= (pageTitle ? pageTitle : title ? title : config.defaultTitle)
@@ -31,3 +31,4 @@ html
 
     body
         block content
+        block modal

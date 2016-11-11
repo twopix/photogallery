@@ -1,0 +1,153 @@
+.modal {
+	font-size: 0;
+
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+
+	overflow: visible;
+
+	box-sizing: border-box;
+	width: 100vw;
+	height: 100vh;
+
+	visibility:hidden;
+	opacity:0;
+
+	transition: opacity .4s, visibility .4s;
+
+	&__wrapper {
+		position: relative;
+		z-index: 1002;
+
+		overflow: auto;
+
+		box-sizing: border-box;
+		height: 100%;
+		padding: 3.5rem 0;
+
+		text-align: center;
+		&:after {
+			position: relative;
+			z-index: 1003;
+
+			display: inline-block;
+			overflow: hidden;
+
+			width: 0;
+			height: 100%;
+			min-height: 100%;
+
+			content: "";
+			vertical-align: middle;
+		}
+	}
+	&__overlay {
+		position: absolute;
+		z-index: 1001;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		background: rgba(0,0,0,.75);
+	}
+	&__content {
+		position: relative;
+		z-index: 1004;
+
+		display: inline-block;
+		overflow: hidden;
+
+		width: calc(100% - 7rem);
+		max-width: 68rem;
+
+		text-align: left;
+		vertical-align: middle;
+
+		border-radius: .5rem;
+		background: #fff;
+	}
+	&__header {
+		display: table;
+
+		box-sizing: border-box;
+		width: 100%;
+		padding: 2rem;
+
+		color: #323232;
+		background: #f1f1f1;
+	}
+	&__title {
+		font-family: $default-font-special;
+		font-size: 2.1rem;
+
+		display: table-cell;
+
+		width: 100%;
+
+		vertical-align: middle;
+	}
+	&__close {
+		display: table-cell;
+
+		padding: 0 0 0 1rem;
+
+		vertical-align: middle;
+	}
+	&__close-btn {
+		font-size: 2.6rem;
+
+		padding: 0;
+
+		cursor: pointer;
+		transition: color .2s;
+
+		color: #a0a09f;
+		border: 0;
+		background: none;
+		outline:none;
+
+		&:focus,&:hover,&:active {
+			color: #323232;
+		}
+		.svg-icon {
+			display: block;
+		}
+	}
+	&__footer {
+		display: table;
+
+		box-sizing: border-box;
+		width: 100%;
+		padding: 1.5rem 2rem;
+
+		background: #f1f1f1;
+	}
+	&__btns-left {
+		width: 100%;
+	}
+	&__btns-left,
+	&__btns-right {
+		display: table-cell;
+
+		vertical-align: top;
+	}
+	&__btn {
+		margin: 0 2rem 0 0;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	&__body {
+		font-size: 1.6rem;
+
+		padding: 4rem 2rem;
+	}
+	&_visible {
+		visibility:visible;
+		opacity:1;
+		transition: opacity .4s, visibility 0s;
+	}
+}

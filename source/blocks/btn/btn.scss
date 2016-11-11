@@ -4,6 +4,7 @@
 	line-height: 4rem;
 	line-height: 1;
 
+	display: inline-block;
 	overflow: hidden;
 
 	box-sizing: border-box;
@@ -11,7 +12,7 @@
 	padding: 0 2rem;
 
 	cursor: pointer;
-	transition: background-color .4s ease-out, color .2s ease-out;
+	transition: background-color .2s ease-out, color .2s ease-out;
 	white-space: nowrap;
 
 	color: #fff;
@@ -32,6 +33,11 @@
 
 		transition: max-width .5s ease-out, margin .3s linear;
 		vertical-align: middle;
+		&:after {
+			content:"";
+			display: inline-block;
+			width:1.5rem;
+		}
 	}
 	&:focus {
 		background: lighten(#24b0e3,20%);
@@ -63,7 +69,7 @@
 		position: relative;
 
 		padding: 0;
-		svg {
+		.svg-icon {
 			font-size: 2rem;
 
 			display: inline-block;
@@ -75,19 +81,52 @@
 		&:hover .btn__text,
 		&:focus .btn__text {
 			max-width: 20rem;
-			margin: 0 1.5rem 0 0;
+		}
+	}
+	&_width_fixed {
+		padding:0 2rem;
+		.svg-icon {
+			margin:0 1rem 0 0;
+			font-size: 1.6rem;
+		}
+		.btn__text,&:hover .btn__text {
+			max-width:none;
+			margin: 0;
+			&:after {
+				display:none;
+			}
+		}
+	}
+	&_red {
+		background:#ef4534;
+		color:rgba(#fff,.8);
+		&:hover {
+			background:#d94231;
+			color:rgba(#fff,1);
 		}
 	}
 	&_bg_transparent {
-		background: transparent;
-		color:#28bbf0;
+		color: #28bbf0;
 		border: .1rem solid #28bbf0;
+		background: transparent;
 		&:focus {
-			background-color:#ededed;
+			background-color: #ededed;
 		}
 		&:hover {
-			background-color:#28bbf0;
-			color:#fff;
+			color: #fff;
+			background-color: #28bbf0;
+		}
+	}	
+	&_text {
+		height: auto;
+		padding: 0;
+
+		color: #28bbf0;
+		border: 0;
+		background: none;
+		&:hover {
+			color: #139acb;
+			background: none;
 		}
 	}
 }
