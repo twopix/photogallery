@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Validator;
 
 class FileUploadController extends Controller
@@ -45,17 +44,8 @@ class FileUploadController extends Controller
 	 */
 	public function store(Request $request)
 	{
-//		return response()->json([
-//			'success' => true,
-//			'status' => 'success',
-//			'error' => 0,
-//			'result' => [
-//				'isUploaded' => true
-//			]
-//		], 200);
 
-		$userId = Auth::User()->id;
-
+		$userId = $request->user()->id;
 		$requestData = $request->all();
 
 		$rules = array(
@@ -64,70 +54,47 @@ class FileUploadController extends Controller
 			'file' => 'image|max:2000',
 		);
 		$validation = Validator::make($requestData, $rules);
-		if($validation->fails()){
-			return response()->json( $validation->errors()
-				, 400);
+		if ($validation->fails()){
+			return response()->json([
+				'status' => 'error',
+				'error' => 'Ошибка при зарузке файла',
+				'errors' => $validation->errors()
+			], 400);
 		}
 
 		$file = $request->file('file');
+		$fileName = $file->getClientOriginalName();
+		$fileExtension = $file->getClientOriginalExtension();
+		$diskType = $request->input('type');
+		$objectId = $request->input('obj_id');
 
-		$destinationPath = 'storage/app/public/images/' . $request->input('type'); // upload path
-		$extension = $file->getClientOriginalExtension(); // getting file extension
-		$fileName = '.' . $extension; // renaming image
-
-		if ($request->input('type') == 'profile') {
-			$fileName = $userId . $fileName;
-		} else if ($request->input('type') == 'album') {
-			$destinationPath .= '/' . $request->input('obj_id');
-			$fileName = rand(11111, 99999) . $fileName;
+		// uploading file to given path
+		if ($diskType == 'profile') {
+			$uploadPath = $file->storeAs($diskType, $userId . '.' . $fileExtension);
+		} else {
+			$uploadPath = $file->store($diskType . '/' . $objectId);
 		}
 
-		$upload_success = $file->move($destinationPath, $fileName); // uploading file to given path
-
-		if ($upload_success) {
+		if ($uploadPath) {
 			return response()->json([
 				'success' => true,
 				'status' => 'success',
-				'error' => 0,
+				'error' => false,
 				'result' => [
 					'isUploaded' => true,
-					'src' => $upload_success->getPathname()
+					'src' => url('/storage/' . $uploadPath)
 				]
 			], 200);
 		} else {
 			return response()->json([
-				'success' => false,
 				'status' => 'error',
-				'error' => 1,
+				'error' => 'Ошибка при зарузке файла',
 				'result' => [
 					'isUploaded' => false
 				]
 			], 400);
 		}
 
-//		dd(Auth::User());
-//		dd($requestData);
-
-//		$file = $request -> file('file');
-//		// show the file name
-//		echo 'File Name : '.$file->getClientOriginalName();
-//		echo '<br>';
-//
-//		// show file extensions
-//		echo 'File Extensions : '.$file->getClientOriginalExtension();
-//		echo '<br>';
-//
-//		// show file path
-//		echo 'File Path : '.$file->getRealPath();
-//		echo '<br>';
-//
-//		// show file size
-//		echo 'File Size : '.$file->getSize();
-//		echo '<br>';
-//
-//		// show file mime type
-//		echo 'File Mime Type : '.$file->getMimeType();
-//		echo '<br>';
 	}
 
 	/**
