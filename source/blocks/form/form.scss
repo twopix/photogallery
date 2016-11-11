@@ -2,8 +2,8 @@
 	position: relative;
 	&__group {
 		position: relative;
-		margin-top:2rem;
-		padding:3.5rem 0 0 0;
+
+		padding:2rem 0;
 		&:after {
 			content:"";
 			display:block;
@@ -13,6 +13,9 @@
 			right:-2rem;
 			height:.1rem;
 			background:#d6d6d6;
+		}
+		&:first-child:after {
+			display:none;
 		}
 	}
 	&__row {
@@ -107,7 +110,9 @@
 
 		margin: 1em 0;
 
-		text-align: center;
+		&_center {
+			text-align: center;
+		}
 		&-message {
 			display: inline-block;
 
@@ -119,5 +124,6 @@
 			border-radius: .5rem;
 			background: rgba(#ffe0e0,.9);
 		}
+
 	}
 }

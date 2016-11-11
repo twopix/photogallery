@@ -1,11 +1,13 @@
 .input-file {
 	font-size:0;
+	display: inline-block;
+	position:relative;
+
 	&__input {
 		display:none;
 	}
 	&__btn {
 		vertical-align: middle;
-		margin: 0 2rem 0 0;
 	}
 	&__descr {
 		display: inline-block;
@@ -13,5 +15,6 @@
 		font-size:1.4rem;
 		font-family: $default-font-italic;
 		color:rgba(#323232,.8);
+		margin: 0 0 0 2rem;
 	}
 }
