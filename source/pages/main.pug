@@ -33,12 +33,14 @@ block content
 						ul.profile__btns
 							li.profile__btn
 								button.btn.btn_with-icon.btn_light 
-									+svg('edit')
-									span.btn__text Редактировать
+									span.btn__wrap
+										+svg('edit')
+										span.btn__text Редактировать
 							li.profile__btn
 								button.btn.btn_with-icon.btn_light 
-									+svg('off')
-									span.btn__text Выйти
+									span.btn__wrap
+										+svg('off')
+										span.btn__text Выйти
 
 			.header__search
 				.search
@@ -239,14 +241,16 @@ block content
 									span.photo__album-title Прогулки по воде
 						
 					.photos__more
-						button.btn.btn_flat.btn_bg_transparent Показать еще
+						button.btn.btn_flat.btn_bg_transparent 
+							span.btn__wrap Показать еще
 			.main__section
 				.albums.main__section-wrap
 					.title.albums__title Мои альбомы
 					.albums__add
 						button.btn.btn_with-icon.btn_light 
-							+svg('add')
-							span.btn__text Добавить альбом
+							span.btn__wrap
+								+svg('add')
+								span.btn__text Добавить альбом
 					.albums__list
 						.album.albums__item
 							a.album__pic(href="" title="")

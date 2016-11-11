@@ -12,7 +12,8 @@ block modal
 					.modal__title Добавить альбом
 					.modal__close
 						button.modal__close-btn
-							+svg('close')
+							span.btn__wrap
+								+svg('close')
 				.modal__body
 					form.form(action="#" method="post")
 						label.form__row
@@ -30,14 +31,18 @@ block modal
 							.form__row-el
 								.input-file
 									input.input-file__input(type="file" name="")
-									button.input-file__btn.btn.btn_flat.btn_bg_transparent(type="button") Выбрать обложку
+									button.input-file__btn.btn.btn_flat.btn_bg_transparent(type="button") 
+										.btn__wrap Выбрать обложку
 									.input-file__descr (файл должен быть размером <br />не более <strong>1024 КБ</strong>)
 
 				.modal__footer
 					.modal__btns-left
-						button.btn.btn_flat.modal__btn Сохранить
-						button.btn.btn_flat.btn_text.modal__btn Отменить
+						button.btn.btn_flat.modal__btn 
+							span.btn__wrap Сохранить
+						button.btn.btn_flat.btn_text.modal__btn 
+							span.btn__wrap Отменить
 					.modal__btns-right
 						button.btn.btn_red.btn_with-icon.btn_width_fixed.btn_flat
-							+svg('delete')
-							span.btn__text Удалить
+							span.btn__wrap
+								+svg('delete')
+								span.btn__text Удалить

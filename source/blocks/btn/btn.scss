@@ -4,8 +4,9 @@
 	line-height: 4rem;
 	line-height: 1;
 
+	position: relative;
+
 	display: inline-block;
-	overflow: hidden;
 
 	box-sizing: border-box;
 	height: 4rem;
@@ -21,6 +22,9 @@
 	outline: none;
 	background: #28bbf0;
 	box-shadow: 0 .2rem .2rem 0 rgba(0, 0, 0, .2);
+	&__wrap {
+		position: relative;
+	}
 	&__text {
 		font-size: 1.4rem;
 
@@ -34,9 +38,11 @@
 		transition: max-width .5s ease-out, margin .3s linear;
 		vertical-align: middle;
 		&:after {
-			content:"";
 			display: inline-block;
-			width:1.5rem;
+
+			width: 1.5rem;
+
+			content: "";
 		}
 	}
 	&:focus {
@@ -84,25 +90,27 @@
 		}
 	}
 	&_width_fixed {
-		padding:0 2rem;
+		padding: 0 2rem;
 		.svg-icon {
-			margin:0 1rem 0 0;
 			font-size: 1.6rem;
+
+			margin: 0 1rem 0 0;
 		}
-		.btn__text,&:hover .btn__text {
-			max-width:none;
+		.btn__text,
+		&:hover .btn__text {
+			max-width: none;
 			margin: 0;
 			&:after {
-				display:none;
+				display: none;
 			}
 		}
 	}
 	&_red {
-		background:#ef4534;
-		color:rgba(#fff,.8);
+		color: rgba(#fff,.8);
+		background: #ef4534;
 		&:hover {
-			background:#d94231;
-			color:rgba(#fff,1);
+			color: rgba(#fff,1);
+			background: #d94231;
 		}
 	}
 	&_bg_transparent {
@@ -116,15 +124,15 @@
 			color: #fff;
 			background-color: #28bbf0;
 		}
-	}	
+	}
 	&_text {
 		height: auto;
-		padding: 0;
+		padding: 0 .1rem;
 
 		color: #28bbf0;
 		border: 0;
 		background: none;
-		&:hover {
+		&:focus,&:hover,&:active {
 			color: #139acb;
 			background: none;
 		}

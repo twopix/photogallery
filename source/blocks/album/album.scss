@@ -153,6 +153,8 @@
 			transition: color .2s;
 
 			color: rgba(#323232, .2);
+
+			position:relative;
 		}
 		&:hover {
 			.svg-icon {

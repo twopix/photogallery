@@ -157,12 +157,16 @@
 		&-name {
 			font-size: 1.6rem;
 
+			position: relative;
+
 			display: inline-block;
 
 			vertical-align: middle;
 		}
 		.svg-icon {
 			font-size: 2rem;
+
+			position: relative;
 
 			margin: 0 1rem 0 0;
 
@@ -213,6 +217,8 @@
 			text-overflow: ellipsis;
 		}
 		&-link {
+			display: inline-block;
+
 			transition: color .2s;
 
 			color: #323232;
