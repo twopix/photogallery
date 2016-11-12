@@ -6,7 +6,8 @@ block variables
 block content
 	.page
 		header.header
-			img.header__bg(src="./assets/img/page__header-back.jpg" alt="")
+			.header__bg
+				img(src="./assets/img/page__header-back.jpg" alt="")
 			.header__wrap
 				.profile
 					.profile__pic
@@ -50,6 +51,76 @@ block content
 								input.input-text.input-text_with-icon.input-text_border_transparent.input-text_full-width(type="text" placeholder="Исследовать мир")
 								+svg('search')
 
+		header.header
+			.header__bg
+				img(src="./assets/img/page__header-back.jpg" alt="")
+			.header__wrap
+				//- Добавляем класс .profile_edit
+				form.profile.profile_edit(action="#" method="post")
+					//- Добавляем block .profile__pic-edit.profile__bg-edit
+					.profile__pic-edit.profile__bg-edit
+						input.input-file__input(type="file" name="")
+						button.profile__pic-edit-btn.input-file__btn(type="button")
+							+svg('cam')
+							span Изменить фон
+					.profile__pic
+						//- Добавляем block .profile__pic-edit.input-file
+						.profile__pic-edit.input-file
+							input.input-file__input(type="file" name="")
+							button.profile__pic-edit-btn.input-file__btn(type="button")
+								+svg('cam')
+								span Изменить фото
+						img(src="./assets/img/user-pic.jpg" alt="")
+
+					.profile__info
+						.profile__name
+							//- Заключаем в input
+							input.input-text.input-text_full-width(type="text" name="" value="Антон Черепов")
+						.profile__about 
+							//- Заключаем в textarea
+							textarea.input-text.input-text_full-width.input-text_textarea.input-text_two-strings(name="") Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
+						ul.profile__lnks
+							li.profile__lnks-item
+								a(href="" title="" target="_blank")
+									+svg('soc_fb')
+								.profile__lnks-item-edit
+									input.input-text.input-text_border-color_gray.input-text_full-width(type="text" name="" placeholder="http://fb.com" value="")
+									.profile__lnks-item-btns
+										button.btn.btn_flat.modal__btn 
+											span.btn__wrap Сохранить
+										button.btn.btn_flat.btn_text.modal__btn 
+											span.btn__wrap Отменить
+							li.profile__lnks-item
+								a(href="" title="" target="_blank")
+									+svg('soc_vk')
+							li.profile__lnks-item
+								a(href="" title="" target="_blank")
+									+svg('soc_google')
+							li.profile__lnks-item
+								a(href="" title="" target="_blank")
+									+svg('soc_twitter')
+							li.profile__lnks-item
+								a(href="" title="" target="_blank")
+									+svg('soc_email')
+						ul.profile__btns
+							li.profile__btn
+								button.btn.btn_with-icon.btn_light 
+									span.btn__wrap
+										+svg('edit')
+										span.btn__text Редактировать
+							li.profile__btn
+								button.btn.btn_with-icon.btn_light 
+									span.btn__wrap
+										+svg('off')
+										span.btn__text Выйти
+
+			.header__search
+				.search
+					.search__wrap 
+						form.search__form.form(action="#" method="post") 
+							label.form__row
+								input.input-text.input-text_with-icon.input-text_border_transparent.input-text_full-width(type="text" placeholder="Исследовать мир")
+								+svg('search')
 		main.main.main_bgcolor_gray
 			.main__section.main__section_bgcolor_white
 				.photos.main__section-wrap
@@ -312,7 +383,8 @@ block content
 
 
 		footer.footer.footer_color_white.footer_bg-dark
-			img.footer__bg(src="./assets/img/page__header-back.jpg" alt="")
+			.footer__bg
+				img(src="./assets/img/page__header-back.jpg" alt="")
 			.footer__wrap
 				a.footer__top(href="#" title="")
 					+svg('top')

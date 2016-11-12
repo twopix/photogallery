@@ -10,6 +10,7 @@
 	color: #fff;
 	&__pic {
 		position: relative;
+		z-index: 3;
 
 		display: inline-block;
 		overflow: hidden;
@@ -34,7 +35,7 @@
 
 			content: "";
 
-			border: 3px solid #fff;
+			border: .3rem solid #fff;
 			border-radius: 50%;
 		}
 		img {
@@ -49,6 +50,58 @@
 			transform: translateX(-50%) translateY(-50%);
 			vertical-align: middle;
 		}
+		&-edit {
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			border: .3rem solid #fff;
+			border-radius: 50%;
+			background: rgba(0,0,0,.8);
+			&-btn {
+				width: 100%;
+				height: 100%;
+
+				cursor: pointer;
+				text-align:center;
+
+				color: rgba(#fff,.8);
+				transition: color .2s;
+				border: 0;
+				outline: none;
+				background: none;
+				.svg-icon {
+					font-size: 5rem;
+					margin:0 0 .6rem;
+
+					position: relative;
+				}
+				span {
+					display:block;
+					font-family: $default-font-bold;
+					font-size: 1.6rem;
+
+					position: relative;
+				}
+				&:focus,
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+	}
+	&__bg-edit {
+		left:auto;
+		bottom:auto;
+		right:25%;
+		top:50%;
+		transform:translateX(50%) translateY(-50%);
+		border:0;
+	    background:none;
+		border-radius: 0;
 	}
 	&__info {
 		display: inline-block;
@@ -60,14 +113,23 @@
 	&__name {
 		font-family: $default-font-special;
 		font-size: 2.1rem;
+
+		position: relative;
+		z-index: 3;
 	}
 	&__about {
 		font-size: 1.6rem;
 		line-height: 1.5;
 
+		position: relative;
+		z-index: 3;
+
 		margin: 1rem 0 0;
 	}
 	&__lnks {
+		position: relative;
+		z-index: 4;
+
 		display: table;
 
 		margin: 2.6rem 0 0;
@@ -97,6 +159,23 @@
 		svg {
 			display: block;
 		}
+		&-edit {
+			position:absolute;
+			z-index:10;
+			left: 50%;
+			top: 100%;
+			transform:translateX(-50%);
+			min-width:100%;
+			max-width:28rem;
+			padding:1rem;
+			box-sizing:border-box;
+			background:#fff;
+			border-radius: .5rem;
+			box-shadow:0 0 .5rem rgba(0,0,0,.5);
+		}
+		&-btns {
+			margin-top:1rem;
+		}
 	}
 	&__btns {
 		position: absolute;
@@ -111,5 +190,29 @@
 	}
 	&__btn {
 		margin-top: 1rem;
+	}
+	&_edit {
+		.profile__info {
+			width:40%;
+			max-width: 48rem;
+			&:after {
+				position: absolute;
+				z-index: 2;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+
+				display: block;
+
+				content: "";
+
+				background: rgba(0,0,0,.65);
+			}
+		}
+		.profile__pic {
+			position: relative;
+			z-index: 3;
+		}
 	}
 }

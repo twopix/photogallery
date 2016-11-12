@@ -84,15 +84,16 @@
 		padding:.7rem 2rem;
 		line-height:1.5;
 		transition:min-height .2s;
-		min-height:12rem;
-		&:focus {
-			min-height:12rem;
-		}
+		min-height:11rem;
 	}
 	&_textarea-collapse {
 		min-height:0;
 		&:focus {
-			min-height:12rem;
+			min-height:11rem;
 		}
+	}
+	&_two-strings {
+		min-height:6.2rem;
+		resize:none;
 	}
 }

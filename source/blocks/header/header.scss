@@ -1,8 +1,6 @@
 .header {
 	position: relative;
 
-	overflow: hidden;
-
 	height: 30rem;
 
 	&__bg {
@@ -14,17 +12,21 @@
 		display: block;
 
 		min-width: 100%;
-		max-width: none;
-		height: auto;
-		min-height: 55rem;
+		height:30rem;
+
+		overflow:hidden;
 
 		transform: translateX(-50%);
+
+		img {
+			height: auto;
+			min-height:55rem;
+			width:100%;
+			object-fit:cover;
+		}
 	}
 	&__wrap {
 		font-size: 0;
-
-		position: relative;
-		z-index: 3;
 
 		box-sizing: border-box;
 		max-width: $max-width;
@@ -47,6 +49,7 @@
 		z-index: 3;
 		
 		height: 6rem;
+		overflow:hidden;
 	}
 	&:after {
 		position: absolute;

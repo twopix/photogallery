@@ -44,6 +44,13 @@
 		min-height: 55rem;
 
 		transform: translateX(-50%);
+
+		img {
+			height: auto;
+			min-height:55rem;
+			width:100%;
+			object-fit:cover;
+		}		
 	}
 	&__wrap {
 		position: relative;
@@ -93,6 +100,6 @@
 
 		content: "";
 
-		background: rgba(0,0,0,.75);
+		background: rgba(0,0,0,.25);
 	}
 }
