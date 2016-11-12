@@ -8,70 +8,71 @@ block modal
 		.modal__overlay
 		.modal__wrapper
 			.modal__content
-				.modal__header
-					.modal__title Редактировать профиль
-					.modal__close
-						button.modal__close-btn
-							span.btn__wrap
-								+svg('close')
-				.modal__body
-					form.form(action="#" method="post")
-						.form__group
-							label.form__row
-								.form__row-name Ваше имя
-								.form__row-el.form__row-el_width_50
-									input.input-text.input-text_border-color_gray.input-text_full-width(type="text" name="" placeholder="Имя")
-								.form__row-el.form__row-el_width_50
-									input.input-text.input-text_border-color_gray.input-text_full-width(type="text" name="" placeholder="Фамилия")
-							label.form__row
-								.form__row-name О себе
-								.form__row-el
-									textarea.input-text.input-text_border-color_gray.input-text_full-width.input-text_textarea(name="" placeholder="Немного текста о себе")
-							label.form__row
-								.form__row-preview
-									.form__preview-pic
-										img(src="./assets/img/user-pic.jpg" alt="")
-								.form__row-el
-									.input-file
-										input.input-file__input(type="file" name="")
-										button.input-file__btn.btn.btn_flat.btn_bg_transparent(type="button") Загрузить фотографию
-										.input-file__descr (файл должен быть размером <br />не более <strong>512 КБ</strong>)
-							label.form__row
-								.form__row-preview
-									.form__preview-pic
-										img(src="./assets/img/page__header-back.jpg" alt="")
-								.form__row-el
-									.input-file
-										input.input-file__input(type="file" name="")
-										button.input-file__btn.btn.btn_flat.btn_bg_transparent(type="button") Загрузить фон
-										.input-file__descr (файл должен быть размером <br />не более <strong>1024 КБ</strong>)
-						.form__group
-							label.form__row
-								.form__row-name Вконтакте
-								.form__row-el
-									input.input-text.input-text_border-color_gray.input-text_width_50(type="url" name="" placeholder="http://vk.com")
-							label.form__row
-								.form__row-name Facebook
-								.form__row-el
-									input.input-text.input-text_border-color_gray.input-text_width_50(type="url" name="" placeholder="http://fb.com")
-							label.form__row
-								.form__row-name Email
-								.form__row-el
-									input.input-text.input-text_border-color_gray.input-text_width_50(type="email" name="" placeholder="ivanov@mail.ru")
-							label.form__row
-								.form__row-name Twitter
-								.form__row-el
-									input.input-text.input-text_border-color_gray.input-text_width_50(type="url" name="" placeholder="http://twitter.com")
-							label.form__row
-								.form__row-name Google+
-								.form__row-el
-									input.input-text.input-text_border-color_gray.input-text_width_50(type="url" name="" placeholder="http://plus.google.com")
-						.form__tip
-							.form__tip-message Имя должно быть заполнено!
+				.modal__content-wrap
+					.modal__header
+						.modal__title Редактировать профиль
+						.modal__close
+							button.modal__close-btn
+								span.btn__wrap
+									+svg('close')
+					.modal__body
+						form.form(action="#" method="post")
+							.form__group
+								label.form__row
+									.form__row-name Ваше имя
+									.form__row-el.form__row-el_width_50
+										input.input-text.input-text_border-color_gray.input-text_full-width(type="text" name="" placeholder="Имя")
+									.form__row-el.form__row-el_width_50
+										input.input-text.input-text_border-color_gray.input-text_full-width(type="text" name="" placeholder="Фамилия")
+								label.form__row
+									.form__row-name О себе
+									.form__row-el
+										textarea.input-text.input-text_border-color_gray.input-text_full-width.input-text_textarea(name="" placeholder="Немного текста о себе")
+								label.form__row
+									.form__row-preview
+										.form__preview-pic
+											img(src="./assets/img/user-pic.jpg" alt="")
+									.form__row-el
+										.input-file
+											input.input-file__input(type="file" name="")
+											button.input-file__btn.btn.btn_flat.btn_bg_transparent(type="button") Загрузить фотографию
+											.input-file__descr (файл должен быть размером <br />не более <strong>512 КБ</strong>)
+								label.form__row
+									.form__row-preview
+										.form__preview-pic
+											img(src="./assets/img/page__header-back.jpg" alt="")
+									.form__row-el
+										.input-file
+											input.input-file__input(type="file" name="")
+											button.input-file__btn.btn.btn_flat.btn_bg_transparent(type="button") Загрузить фон
+											.input-file__descr (файл должен быть размером <br />не более <strong>1024 КБ</strong>)
+							.form__group
+								label.form__row
+									.form__row-name Вконтакте
+									.form__row-el
+										input.input-text.input-text_border-color_gray.input-text_width_50(type="url" name="" placeholder="http://vk.com")
+								label.form__row
+									.form__row-name Facebook
+									.form__row-el
+										input.input-text.input-text_border-color_gray.input-text_width_50(type="url" name="" placeholder="http://fb.com")
+								label.form__row
+									.form__row-name Email
+									.form__row-el
+										input.input-text.input-text_border-color_gray.input-text_width_50(type="email" name="" placeholder="ivanov@mail.ru")
+								label.form__row
+									.form__row-name Twitter
+									.form__row-el
+										input.input-text.input-text_border-color_gray.input-text_width_50(type="url" name="" placeholder="http://twitter.com")
+								label.form__row
+									.form__row-name Google+
+									.form__row-el
+										input.input-text.input-text_border-color_gray.input-text_width_50(type="url" name="" placeholder="http://plus.google.com")
+							.form__tip
+								.form__tip-message Имя должно быть заполнено!
 
-				.modal__footer
-					.modal__btns-left
-						button.btn.btn_flat.modal__btn 
-							span.btn__wrap Сохранить
-						button.btn.btn_flat.btn_text.modal__btn 
-							span.btn__wrap Отменить
+					.modal__footer
+						.modal__btns-left
+							button.btn.btn_flat.modal__btn 
+								span.btn__wrap Сохранить
+							button.btn.btn_flat.btn_text.modal__btn 
+								span.btn__wrap Отменить

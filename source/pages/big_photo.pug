@@ -1,0 +1,20 @@
+extends main
+
+block variables
+	- var rootClass = 'modal-on'
+
+block modal
+	.modal.modal_visible
+		.modal__overlay
+		.modal__wrapper
+			.modal__content
+				.modal__close.modal__close_outer
+					button.modal__close-btn
+						span.btn__wrap
+							+svg('close')
+				.modal__content-wrap
+					.modal__body
+						modal__pic
+							img(src="./assets/img/photo_1.jpg")
+
+					.modal__footer wefwef

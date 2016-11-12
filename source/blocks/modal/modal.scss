@@ -58,7 +58,6 @@
 		z-index: 1004;
 
 		display: inline-block;
-		overflow: hidden;
 
 		width: calc(100% - 7rem);
 		max-width: 68rem;
@@ -66,8 +65,11 @@
 		text-align: left;
 		vertical-align: middle;
 
-		border-radius: .5rem;
-		background: #fff;
+		&-wrap {
+			border-radius: .5rem;
+			background: #fff;
+			overflow:hidden;
+		}
 	}
 	&__header {
 		display: table;
@@ -95,6 +97,14 @@
 		padding: 0 0 0 1rem;
 
 		vertical-align: middle;
+
+		&_outer {
+			display:block;
+			position:absolute;
+			padding:0;
+			bottom:100%;
+			left:100%;
+		}
 	}
 	&__close-btn {
 		font-size: 2.6rem;

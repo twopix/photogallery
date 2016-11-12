@@ -8,43 +8,44 @@ block modal
 		.modal__overlay
 		.modal__wrapper
 			.modal__content
-				.modal__header
-					.modal__title Добавить альбом
-					.modal__close
-						button.modal__close-btn
-							span.btn__wrap
-								+svg('close')
-				.modal__body
-					form.form(action="#" method="post")
-						.form__group
-							label.form__row
-								.form__row-name Название
-								.form__row-el
-									input.input-text.input-text_border-color_gray.input-text_full-width(type="text" name="" placeholder="Название альбома")
-							label.form__row
-								.form__row-name Описание
-								.form__row-el
-									textarea.input-text.input-text_border-color_gray.input-text_full-width.input-text_textarea(name="" placeholder="Описание альбома")
-							label.form__row
-								.form__row-preview
-									.form__preview-pic
-										img(src="./assets/img/page__header-back.jpg" alt="")
-								.form__row-el
-									.input-file
-										input.input-file__input(type="file" name="")
-										button.input-file__btn.btn.btn_flat.btn_bg_transparent(type="button") Выбрать обложку
-										.input-file__descr (файл должен быть размером <br />не более <strong>1024 КБ</strong>)
-							.form__tip
-								.form__tip-message Обложка обязательно должна быть выбрана!
+				.modal__content-wrap
+					.modal__header
+						.modal__title Добавить альбом
+						.modal__close
+							button.modal__close-btn
+								span.btn__wrap
+									+svg('close')
+					.modal__body
+						form.form(action="#" method="post")
+							.form__group
+								label.form__row
+									.form__row-name Название
+									.form__row-el
+										input.input-text.input-text_border-color_gray.input-text_full-width(type="text" name="" placeholder="Название альбома")
+								label.form__row
+									.form__row-name Описание
+									.form__row-el
+										textarea.input-text.input-text_border-color_gray.input-text_full-width.input-text_textarea(name="" placeholder="Описание альбома")
+								label.form__row
+									.form__row-preview
+										.form__preview-pic
+											img(src="./assets/img/page__header-back.jpg" alt="")
+									.form__row-el
+										.input-file
+											input.input-file__input(type="file" name="")
+											button.input-file__btn.btn.btn_flat.btn_bg_transparent(type="button") Выбрать обложку
+											.input-file__descr (файл должен быть размером <br />не более <strong>1024 КБ</strong>)
+								.form__tip
+									.form__tip-message Обложка обязательно должна быть выбрана!
 
-				.modal__footer
-					.modal__btns-left
-						button.btn.btn_flat.modal__btn 
-							span.btn__wrap Сохранить
-						button.btn.btn_flat.btn_text.modal__btn 
-							span.btn__wrap Отменить
-					.modal__btns-right
-						button.btn.btn_red.btn_with-icon.btn_width_fixed.btn_flat
-							span.btn__wrap
-								+svg('delete')
-								span.btn__text Удалить
+					.modal__footer
+						.modal__btns-left
+							button.btn.btn_flat.modal__btn 
+								span.btn__wrap Сохранить
+							button.btn.btn_flat.btn_text.modal__btn 
+								span.btn__wrap Отменить
+						.modal__btns-right
+							button.btn.btn_red.btn_with-icon.btn_width_fixed.btn_flat
+								span.btn__wrap
+									+svg('delete')
+									span.btn__text Удалить
