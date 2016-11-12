@@ -67,7 +67,6 @@
 
 		&-wrap {
 			border-radius: .5rem;
-			background: #fff;
 			overflow:hidden;
 		}
 	}
@@ -98,12 +97,23 @@
 
 		vertical-align: middle;
 
+
+		color: #a0a09f;
+
+		&:focus,&:hover,&:active {
+			color: #323232;
+		}
+
 		&_outer {
 			display:block;
 			position:absolute;
 			padding:0;
 			bottom:100%;
 			left:100%;
+			margin: 0 0 0 .5rem;
+			&:hover {
+				color:#fff;
+			}
 		}
 	}
 	&__close-btn {
@@ -114,14 +124,11 @@
 		cursor: pointer;
 		transition: color .2s;
 
-		color: #a0a09f;
+		color: currentColor;
 		border: 0;
 		background: none;
 		outline:none;
 
-		&:focus,&:hover,&:active {
-			color: #323232;
-		}
 		.svg-icon {
 			display: block;
 		}
@@ -154,6 +161,15 @@
 		font-size: 1.6rem;
 
 		padding: 2rem;
+
+		background: #fff;
+
+		&_bgcolor_transparent {
+			background:none;
+		}
+	}
+	&__pic {
+		margin:-2rem;
 	}
 	&_visible {
 		visibility:visible;

@@ -13,8 +13,14 @@ block modal
 						span.btn__wrap
 							+svg('close')
 				.modal__content-wrap
-					.modal__body
-						modal__pic
-							img(src="./assets/img/photo_1.jpg")
+					.modal__body.modal__body_bgcolor_transparent
+						.big-photo.modal__pic
+							.big-photo__nav
+								button.big-photo__btn.big-photo__btn_prev
+									+svg('arrow_left')
+								button.big-photo__btn.big-photo__btn_next
+									+svg('arrow_right')
 
-					.modal__footer wefwef
+							.big-photo__item
+								.big-photo__cover(style="background-image: url(./assets/img/photo_4.jpg)")
+								img(src="./assets/img/photo_4.jpg")

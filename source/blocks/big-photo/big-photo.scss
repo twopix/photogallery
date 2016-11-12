@@ -1,0 +1,61 @@
+.big-photo {
+	user-select: none;
+
+	&__item {
+		text-align:center;
+		overflow:hidden;
+		position:relative;
+	}
+	&__nav {
+		font-size:0;
+	}
+	&__btn {
+		background:none;
+		padding:0;
+		border:0;
+		font-size:3rem;
+		position:absolute;
+		top:50%;
+		transform:translateY(-1.5rem);
+		z-index:5;
+		cursor:pointer;
+		color:#a0a09f;
+		transition:color .2s;
+		outline:none;
+		.svg-icon {
+			display:block;
+			position:relative;
+		}
+		&_next {
+			left:100%;
+			margin:0 0 0 1rem;
+		}
+		&_prev {
+			right:100%;
+			margin:0 1rem 0 0;
+		}
+		&:hover {
+			color:#fff;
+		}
+	}
+
+	&__cover {
+		position:absolute;
+		overflow:hidden;
+		top: -1.5rem;
+		bottom: -1.5rem;
+		left: -1.5rem;
+		right: -1.5rem;
+		background-size: cover;
+		background-position: center center;
+		filter: blur(1.5rem);
+	}
+
+	img {
+		position:relative;
+		z-index:2;
+		vertical-align:middle;
+		display: inline-block;
+		max-height:calc(100vh - 18rem);
+	}
+}
