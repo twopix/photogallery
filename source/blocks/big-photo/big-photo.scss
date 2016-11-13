@@ -1,15 +1,21 @@
 .big-photo {
 	user-select: none;
 
+
 	&__item {
 		font-size:0;
-		text-align:center;
+		text-align:center;	
+
 		&-wrap {
+
 			overflow:hidden;
 			position:relative;
 			display: inline-block;
 			vertical-align: middle;
 			width:100%;
+			filter:blur(0);
+			border-top-right-radius:.5rem;
+			border-top-left-radius:.5rem;			
 		}
 
 	}
@@ -68,12 +74,13 @@
 			font-size:1.6rem;
 		}
 		.svg-icon {
+			position:relative;
 			color:rgba(#fff,0);
 			transition: color .5s;
 			width:1.9rem;
 			height:1.9rem;
 			stroke:#fff;
-			stroke-width:.3rem;
+			stroke-width:3px;
 		}
 		&_active {
 			.svg-icon {
@@ -106,17 +113,23 @@
 	}
 	&__cover {
 		position:absolute;
-		overflow:hidden;
 		top: -1.5rem;
 		bottom: -1.5rem;
 		left: -1.5rem;
 		right: -1.5rem;
-		background-size: cover;
-		background-position: center center;
-		filter: blur(1.5rem);
+		filter: blur(1rem);
+
+		img {
+			display:block;
+			position:absolute;
+			top:50%;
+			transform:translateY(-50%) translateZ(0);
+			width:100%;
+			min-height:100%;
+		}
 	}
 
-	img {
+	&__pic {
 		position:relative;
 		z-index:2;
 		vertical-align:middle;
