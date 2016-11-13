@@ -1,9 +1,9 @@
 .big-photo {
 	user-select: none;
+	z-index:5;
 
 	&__item {
 		text-align:center;
-		overflow:hidden;
 		position:relative;
 	}
 	&__nav {
@@ -38,7 +38,64 @@
 			color:#fff;
 		}
 	}
+	&__info {
+		position:relative;
+		padding:2rem;
+		background:#fff;
+		display:table;
+		box-sizing:border-box;
+		width:100%;
+	}
+	&__user {
+		display:table-cell;
+		width:100%;
+	}
+	&__likes {
+		display:table-cell;
+		text-align:right;
+	}
+	&__btn-like {
+		vertical-align:middle;
+		.btn__text {
+			font-size:1.6rem;
+		}
+		.svg-icon {
+			color:rgba(#fff,0);
+			transition: color .5s;
+			width:1.9rem;
+			height:1.9rem;
+			stroke:#fff;
+			stroke-width:.3rem;
+		}
+		&_active {
+			.svg-icon {
+				color:rgba(#fff,1);
+			}
+		}
+	}
+	&__name {
+		display:table-row;
+		width:100%;
+		font-size: 2.1rem;
+		font-family: $default-font-bold;
+		&:before {
+			content:"";
+			display:block;
+			height:1.5rem;
+		}
+	}
+	&__descr {
+		margin:.8rem 0 0;
+		line-height:1.5;
 
+		&-tag {
+			font-family: $default-font-bold;
+		}
+	}
+	&__comments {
+		background:#f6f6f6;
+		padding:2rem;
+	}
 	&__cover {
 		position:absolute;
 		overflow:hidden;

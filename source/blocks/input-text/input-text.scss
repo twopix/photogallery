@@ -87,9 +87,13 @@
 		min-height:11rem;
 	}
 	&_textarea-collapse {
-		min-height:0;
+		min-height:4rem;
+		resize:none;
+		overflow: hidden;
 		&:focus {
 			min-height:11rem;
+			resize: vertical;
+			overflow: auto;
 		}
 	}
 	&_two-strings {

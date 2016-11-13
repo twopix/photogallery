@@ -43,7 +43,7 @@
 			width: 1.5rem;
 
 			content: "";
-		}
+		}		
 	}
 	&:focus {
 		background: lighten(#24b0e3,20%);
@@ -54,6 +54,12 @@
 	&:active {
 		background: #139acb;
 	}
+	&_color_gray {
+		color: rgba(#fff,.8);
+		&:focus,&:hover,&:active {
+			color: rgba(#fff,1);
+		}
+	}	
 	&_flat {
 		box-shadow: none;
 	}
@@ -106,10 +112,8 @@
 		}
 	}
 	&_red {
-		color: rgba(#fff,.8);
 		background: #ef4534;
-		&:hover {
-			color: rgba(#fff,1);
+		&:focus,&:hover,&:active {
 			background: #d94231;
 		}
 	}
@@ -135,6 +139,13 @@
 		&:focus,&:hover,&:active {
 			color: #139acb;
 			background: none;
-		}
+		}		
+	}
+	&_color_black {
+		color: #666;
+
+		&:focus,&:hover,&:active {
+			color: #333;
+		}		
 	}
 }

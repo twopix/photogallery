@@ -11,12 +11,17 @@
 
 		height: 25rem;
 		img {
+			position: relative;
+			left: 50%;
+
 			display: block;
 
 			min-width: 100%;
 			max-width: none;
 			height: auto;
 			min-height: 100%;
+
+			transform: translateX(-50%);
 		}
 		&-zoom {
 			position: absolute;
@@ -82,7 +87,7 @@
 		border-radius: 50%;
 		&-zoom {
 			position: absolute;
-			z-index: 1;
+			z-index: 2;
 			top: 0;
 			right: 0;
 			bottom: 0;
@@ -108,7 +113,9 @@
 
 				color: rgba(#fff,0);
 			}
-			&:hover {
+		}
+		&:hover {
+			.photo__user-zoom {
 				background: rgba(#000,.5);
 				.svg-icon {
 					transform: translateY(0);
