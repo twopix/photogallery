@@ -15,15 +15,17 @@ block modal
 				.modal__content-wrap
 					.modal__body.modal__body_bgcolor_transparent
 						.big-photo.modal__pic
-							.big-photo__nav
-								button.big-photo__btn.big-photo__btn_prev
-									+svg('arrow_left')
-								button.big-photo__btn.big-photo__btn_next
-									+svg('arrow_right')
 
 							.big-photo__item
-								.big-photo__cover(style="background-image: url(./assets/img/photo_4.jpg)")
-								img(src="./assets/img/photo_4.jpg")
+								.big-photo__nav
+									button.big-photo__btn.big-photo__btn_prev
+										+svg('arrow_left')
+									button.big-photo__btn.big-photo__btn_next
+										+svg('arrow_right')
+								.big-photo__item-wrap
+									.big-photo__cover(style="background-image: url(./assets/img/photo_4.jpg)")
+									img(src="./assets/img/photo_4.jpg")
+								
 							.big-photo__info
 								.big-photo__user.profile.profile_mini
 									a.profile__pic(href="#" title="")
@@ -44,30 +46,30 @@ block modal
 										span.btn__wrap
 											span Комментарии
 											+svg('arrow_right')
-									.comments__list.comments__list_visible
-										.comments__item.comments__item-add
-											.comments__user-pic.profile.profile_mini
-												a.profile__pic(href="#" title="")
-													img(src="./assets/img/user-pic.jpg" alt="")
-											.comments__content
-												.comments__user-name Антон Черепов
-												form.form.comments__user-text(action="" method="post")
-													.form__row
-														textarea.input-text.input-text_border-color_gray.input-text_full-width.input-text_textarea.input-text_textarea-collapse(name="" placeholder="Ваш комментарий")
-													.form__row
-														button.btn.btn_flat.btn_bg_transparent Добавить
-										.comments__item
-											.comments__user-pic.profile.profile_mini
-												a.profile__pic(href="#" title="")
-													img(src="./assets/img/user-pic.jpg" alt="")
-											.comments__content
-												.comments__user-name Антон Черепов
-												.comments__user-text Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
-										.comments__item
-											.comments__user-pic.profile.profile_mini
-												a.profile__pic(href="#" title="")
-													img(src="./assets/img/user-pic.jpg" alt="")
-											.comments__content
-												.comments__user-name Антон Черепов
-												.comments__user-text Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+								.comments__list.comments__list_visible
+									.comments__item.comments__item-add
+										.comments__user-pic.profile.profile_mini
+											a.profile__pic(href="#" title="")
+												img(src="./assets/img/user-pic.jpg" alt="")
+										.comments__content
+											.comments__user-name Антон Черепов
+											form.form.comments__user-text(action="" method="post")
+												.form__row
+													textarea.input-text.input-text_border-color_gray.input-text_full-width.input-text_textarea.input-text_textarea-collapse(name="" placeholder="Ваш комментарий")
+												.form__row
+													button.btn.btn_flat.btn_bg_transparent Добавить
+									.comments__item
+										.comments__user-pic.profile.profile_mini
+											a.profile__pic(href="#" title="")
+												img(src="./assets/img/user-pic.jpg" alt="")
+										.comments__content
+											.comments__user-name Антон Черепов
+											.comments__user-text Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
+									.comments__item
+										.comments__user-pic.profile.profile_mini
+											a.profile__pic(href="#" title="")
+												img(src="./assets/img/user-pic.jpg" alt="")
+										.comments__content
+											.comments__user-name Антон Черепов
+											.comments__user-text Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением. Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца.
 

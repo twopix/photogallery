@@ -1,13 +1,23 @@
 .big-photo {
 	user-select: none;
-	z-index:5;
 
 	&__item {
+		font-size:0;
 		text-align:center;
-		position:relative;
+		&-wrap {
+			overflow:hidden;
+			position:relative;
+			display: inline-block;
+			vertical-align: middle;
+			width:100%;
+		}
+
 	}
 	&__nav {
 		font-size:0;
+		display: inline-block;
+		vertical-align: middle;	
+		width:0;	
 	}
 	&__btn {
 		background:none;
@@ -15,9 +25,7 @@
 		border:0;
 		font-size:3rem;
 		position:absolute;
-		top:50%;
 		transform:translateY(-1.5rem);
-		z-index:5;
 		cursor:pointer;
 		color:#a0a09f;
 		transition:color .2s;

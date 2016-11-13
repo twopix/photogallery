@@ -17,6 +17,9 @@
 	&__list {
 		max-height:0;
 		transition:max-height .2s;
+		overflow:hidden;
+		margin:0 -2rem;
+		padding:0 2rem;
 
 		&_visible {
 			max-height:none;
@@ -25,8 +28,12 @@
 	&__item {
 		display:table;
 		width:100%;
-		padding:2rem 0;
+		margin:2rem 0 0;
+		padding:2rem 0 0;
 		position:relative;
+		&:first-child {
+			margin: 0;
+		}
 		&:after {
 			content:"";
 			position:absolute;
