@@ -73,6 +73,9 @@
 			border-radius: .5rem;
 			overflow:hidden;
 		}
+		&_width_auto {
+			width:auto;
+		}
 	}
 	&__header {
 		display: table;
@@ -93,6 +96,14 @@
 		width: 100%;
 
 		vertical-align: middle;
+	}
+	&__noty {
+		text-align:center;
+		margin:1rem 0;
+
+		&:first-child {
+			margin-top:0;
+		}
 	}
 	&__close {
 		display: table-cell;
@@ -146,7 +157,7 @@
 
 		background: #f1f1f1;
 	}
-	&__btns-left {
+	&__btns-center,&__btns-left {
 		width: 100%;
 	}
 	&__btns-left,
@@ -154,6 +165,9 @@
 		display: table-cell;
 
 		vertical-align: top;
+	}
+	&__btns-center {
+		text-align:center;
 	}
 	&__btn {
 		margin: 0 2rem 0 0;

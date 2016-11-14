@@ -1,0 +1,36 @@
+extends main
+
+block variables
+	- var rootClass = 'modal-on'
+
+block modal
+	.modal.modal_visible
+		.modal__overlay
+		.modal__wrapper
+			.modal__content
+				.modal__content-wrap
+					.modal__header
+						.modal__title Редактировать фотографию
+						.modal__close
+							button.modal__close-btn
+								span.btn__wrap
+									+svg('close')
+					.modal__body.modal__body
+						.modal__noty Вы хотите удалить этот файл?
+						.modal__btns-center
+							button.btn.btn_red.btn_flat.modal__btn
+								span.btn__wrap Да	
+							button.btn.btn_flat.btn_text.btn_color_black.modal__btn
+								span.btn__wrap Отменить						
+
+					.modal__footer
+						.modal__btns-left
+							button.btn.btn_flat.modal__btn 
+								span.btn__wrap Сохранить
+							button.btn.btn_flat.btn_text.modal__btn 
+								span.btn__wrap Отменить
+						.modal__btns-right
+							button.btn.btn_red.btn_with-icon.btn_width_fixed.btn_flat.btn_color_gray
+								span.btn__wrap
+									+svg('delete')
+									span.btn__text Удалить

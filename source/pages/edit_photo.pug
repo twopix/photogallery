@@ -1,0 +1,43 @@
+extends main
+
+block variables
+	- var rootClass = 'modal-on'
+
+block modal
+	.modal.modal_visible
+		.modal__overlay
+		.modal__wrapper
+			.modal__content
+				.modal__content-wrap
+					.modal__header
+						.modal__title Редактировать фотографию
+						.modal__close
+							button.modal__close-btn
+								span.btn__wrap
+									+svg('close')
+					.modal__body
+						form.form(action="#" method="post")
+							.form__group
+								label.form__row
+									.form__row-name Название
+									.form__row-el
+										input.input-text.input-text_border-color_gray.input-text_full-width(type="text" name="" placeholder="Название фотки")
+								label.form__row
+									.form__row-name Описание
+									.form__row-el
+										textarea.input-text.input-text_border-color_gray.input-text_full-width.input-text_textarea(name="" placeholder="Немного о фотографии")
+						
+							.form__tip
+								.form__tip-message Имя должно быть заполнено!
+
+					.modal__footer
+						.modal__btns-left
+							button.btn.btn_flat.modal__btn 
+								span.btn__wrap Сохранить
+							button.btn.btn_flat.btn_text.modal__btn 
+								span.btn__wrap Отменить
+						.modal__btns-right
+							button.btn.btn_red.btn_with-icon.btn_width_fixed.btn_flat.btn_color_gray
+								span.btn__wrap
+									+svg('delete')
+									span.btn__text Удалить

@@ -1,0 +1,19 @@
+extends main
+
+block variables
+	- var rootClass = 'modal-on'
+
+block modal
+	.modal.modal_visible
+		.modal__overlay
+		.modal__wrapper
+			.modal__content.modal__content_width_auto
+				.modal__content-wrap
+
+					.modal__body 
+						.modal__noty Файлы были загружены
+
+					.modal__footer
+						.modal__btns-center
+							button.btn.btn_flat.btn_bg_transparent.modal__btn 
+								span.btn__wrap Закрыть
