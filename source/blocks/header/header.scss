@@ -2,7 +2,6 @@
 	position: relative;
 
 	height: 30rem;
-
 	&__bg {
 		position: absolute;
 		z-index: 1;
@@ -10,19 +9,18 @@
 		left: 50%;
 
 		display: block;
+		overflow: hidden;
 
 		min-width: 100%;
-		height:30rem;
-
-		overflow:hidden;
+		height: 30rem;
 
 		transform: translateX(-50%);
-
 		img {
+			width: 100%;
 			height: auto;
-			min-height:55rem;
-			width:100%;
-			object-fit:cover;
+			min-height: 55rem;
+
+			object-fit: cover;
 		}
 	}
 	&__wrap {
@@ -44,35 +42,46 @@
 			vertical-align: middle;
 		}
 	}
-	&__album-summary,&__search {
+	&__album-summary,
+	&__search {
 		position: relative;
 		z-index: 3;
-		
+
+		overflow: hidden;
+
 		height: 6rem;
-		overflow:hidden;
 	}
 	&__album-summary-wrap {
+		font-size: 0;
+
 		height: 6rem;
-		background:rgba(255,255,255,.8);
-		font-size:0;
-		text-align:center;
-		list-style:none;
-		padding:0;
+		padding: 0;
+
+		list-style: none;
+
+		text-align: center;
+
+		background: rgba(255,255,255,.8);
 		&:after {
-			content:"";
 			display: inline-block;
+			overflow: hidden;
+
+			width: 0;
+			height: 100%;
+
+			content: "";
 			vertical-align: middle;
-			height:100%;
-			width:0;
-			overflow:hidden;
 		}
 	}
 	&__album-summary-item {
-		display: inline-block;
-		vertical-align: middle;
-		font-size:1.6rem;
 		font-family: $default-font-bold;
-		margin:0 2rem;
+		font-size: 1.6rem;
+
+		display: inline-block;
+
+		margin: 0 2rem;
+
+		vertical-align: middle;
 	}
 	&__album-summary-value {
 		font-family: $default-font-special;

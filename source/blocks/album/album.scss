@@ -150,11 +150,11 @@
 		.svg-icon {
 			font-size: 2.2rem;
 
+			position: relative;
+
 			transition: color .2s;
 
 			color: rgba(#323232, .2);
-
-			position:relative;
 		}
 		&:hover {
 			.svg-icon {
