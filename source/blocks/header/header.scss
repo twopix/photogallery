@@ -32,7 +32,7 @@
 		max-width: $max-width;
 		height: 24rem;
 		margin: auto;
-		padding: 0 3.5rem;
+		padding: 2rem 3.5rem;
 		&:after {
 			display: inline-block;
 			overflow: hidden;
@@ -44,12 +44,63 @@
 			vertical-align: middle;
 		}
 	}
-	&__search {
+	&__album {
+		position:absolute;
+		z-index:2;
+		height:16rem;
+		left: 10.5rem;
+		right: 10.5rem;
+		top: 0;
+		bottom: 0;
+		max-width: $max-width - 21rem;
+		margin:auto;
+		color:#fff;
+
+		&-title {
+			text-align:center;
+			font-size:2.1rem;
+			font-family: $default-font-special;
+			margin:0 0 1rem;
+		}
+		&-descr {
+			text-align:center;
+			font-size:1.6rem;
+			line-height:1.5;
+			color:rgba(#fff,.8);
+		}
+	}
+	&__album-summary,&__search {
 		position: relative;
 		z-index: 3;
 		
 		height: 6rem;
 		overflow:hidden;
+	}
+	&__album-summary-wrap {
+		height: 6rem;
+		background:rgba(255,255,255,.8);
+		font-size:0;
+		text-align:center;
+		list-style:none;
+		padding:0;
+		&:after {
+			content:"";
+			display: inline-block;
+			vertical-align: middle;
+			height:100%;
+			width:0;
+			overflow:hidden;
+		}
+	}
+	&__album-summary-item {
+		display: inline-block;
+		vertical-align: middle;
+		font-size:1.6rem;
+		font-family: $default-font-bold;
+		margin:0 2rem;
+	}
+	&__album-summary-value {
+		font-family: $default-font-special;
 	}
 	&:after {
 		position: absolute;

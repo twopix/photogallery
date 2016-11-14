@@ -116,7 +116,7 @@
 		vertical-align: middle;
 		white-space: nowrap;
 		text-overflow: ellipsis;
-		&:hover {
+		&:hover .album__link {
 			color: #28bbf0;
 		}
 	}

@@ -1,0 +1,181 @@
+extends ../layout
+
+block variables
+	- var title = 'Main'
+
+block content
+	.page
+		block header
+			header.header
+				.header__bg
+					img(src="./assets/img/page__header-back.jpg" alt="")
+				.header__wrap
+					.profile.profile_top.profile_mini.profile_mini-border
+						.profile__pic
+							img(src="./assets/img/user-pic.jpg" alt="")
+						.profile__info
+							.profile__name Антон Черепанов
+							ul.profile__btns
+								li.profile__btn
+									button.btn.btn_with-icon.btn_light 
+										span.btn__wrap
+											+svg('home')
+											span.btn__text Главная
+								li.profile__btn
+									button.btn.btn_with-icon.btn_light 
+										span.btn__wrap
+											+svg('edit')
+											span.btn__text Редактировать
+								li.profile__btn
+									button.btn.btn_with-icon.btn_light 
+										span.btn__wrap
+											+svg('off')
+											span.btn__text Выйти
+
+					.header__album
+						.header__album-title Название альбома
+						.header__album-descr Фотографии природы леса, енотов и оленей. Как прекрасно сойти на дальней станции и пройтись по полю босиком. И чтобы никто не беспокоил бродить влюбленным в тишину. Запах мёда, лесных оленей и енотов будоражит нутро.
+
+				.header__album-summary
+					ul.header__album-summary-wrap
+						li.header__album-summary-item <span class="header__album-summary-value">8</span> фотографий
+						li.header__album-summary-item <span class="header__album-summary-value">12</span> лайков
+						li.header__album-summary-item <span class="header__album-summary-value">8</span> комментариев
+
+		main.main
+			.main__section
+				.photos.photos_in-album.main__section-wrap
+					.photos__add
+						button.btn.btn_with-icon.btn_light 
+							span.btn__wrap
+								+svg('add')
+								span.btn__text Добавить фото
+					.photos__list
+						.album.photo.photos__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__actions
+									button.photo__action.photo__action_comments
+										+svg('comments')
+										span.photo__action-name 4
+									button.photo__action.photo__action_likes
+										+svg('like')
+										span.photo__action-name 32
+								.photo__pic-zoom
+									+svg('loupe')
+
+							.photo__alt-info
+								.photo__alt-actions
+									button.photo__alt-action
+										+svg('edit')
+								.photo__alt-name 
+									a.photo__alt-link(href="#" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						.album.photo.photos__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__actions
+									button.photo__action.photo__action_comments
+										+svg('comments')
+										span.photo__action-name 4
+									button.photo__action.photo__action_likes
+										+svg('like')
+										span.photo__action-name 32
+								.photo__pic-zoom
+									+svg('loupe')
+
+							.photo__alt-info
+								.photo__alt-actions
+									button.photo__alt-action
+										+svg('edit')
+								.photo__alt-name 
+									a.photo__alt-link(href="#" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						.album.photo.photos__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__actions
+									button.photo__action.photo__action_comments
+										+svg('comments')
+										span.photo__action-name 4
+									button.photo__action.photo__action_likes
+										+svg('like')
+										span.photo__action-name 32
+								.photo__pic-zoom
+									+svg('loupe')
+
+							.photo__alt-info
+								.photo__alt-actions
+									button.photo__alt-action
+										+svg('edit')
+								.photo__alt-name 
+									a.photo__alt-link(href="#" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						.album.photo.photos__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__actions
+									button.photo__action.photo__action_comments
+										+svg('comments')
+										span.photo__action-name 4
+									button.photo__action.photo__action_likes
+										+svg('like')
+										span.photo__action-name 32
+								.photo__pic-zoom
+									+svg('loupe')
+
+							.photo__alt-info
+								.photo__alt-actions
+									button.photo__alt-action
+										+svg('edit')
+								.photo__alt-name 
+									a.photo__alt-link(href="#" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						.album.photo.photos__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__actions
+									button.photo__action.photo__action_comments
+										+svg('comments')
+										span.photo__action-name 4
+									button.photo__action.photo__action_likes
+										+svg('like')
+										span.photo__action-name 32
+								.photo__pic-zoom
+									+svg('loupe')
+
+							.photo__alt-info
+								.photo__alt-actions
+									button.photo__alt-action
+										+svg('edit')
+								.photo__alt-name 
+									a.photo__alt-link(href="#" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						.album.photo.photos__item
+							a.photo__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.photo__actions
+									button.photo__action.photo__action_comments
+										+svg('comments')
+										span.photo__action-name 4
+									button.photo__action.photo__action_likes
+										+svg('like')
+										span.photo__action-name 32
+								.photo__pic-zoom
+									+svg('loupe')
+
+							.photo__alt-info
+								.photo__alt-actions
+									button.photo__alt-action
+										+svg('edit')
+								.photo__alt-name 
+									a.photo__alt-link(href="#" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						
+
+
+
+
+		footer.footer.footer_color_white.footer_bg-dark
+			.footer__bg
+				img(src="./assets/img/page__header-back.jpg" alt="")
+			.footer__wrap
+				a.footer__top(href="#" title="")
+					+svg('top')
+				.footer__about Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
+				.footer__copyright.footer__copyright_color_gray 2016 Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool
+block modal

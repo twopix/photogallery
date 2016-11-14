@@ -54,14 +54,14 @@
 
 				color: rgba(#fff,0);
 			}
-			&:hover {
-				background-color: rgba(0,0,0,.4);
-				box-shadow: 0 0 5rem rgba(0,0,0,.2) inset;
-				.svg-icon {
-					transform: translateY(0);
+		}
+		&:hover &-zoom{
+			background-color: rgba(0,0,0,.4);
+			box-shadow: 0 0 5rem rgba(0,0,0,.2) inset;
+			.svg-icon {
+				transform: translateY(0);
 
-					color: rgba(#fff,1);
-				}
+				color: rgba(#fff,1);
 			}
 		}
 	}
@@ -145,6 +145,7 @@
 	}
 	&__actions {
 		margin: 1.4rem 0;
+		color: rgba(#323232, .8);
 	}
 	&__action {
 		font-family: $default-font-special;
@@ -157,9 +158,10 @@
 		cursor: pointer;
 		vertical-align: middle;
 
-		color: rgba(#323232, .8);
 		border: 0;
 		background: none;
+
+		color:currentColor;
 		.svg-icon,
 		&-name {
 			font-size: 1.6rem;
@@ -169,6 +171,8 @@
 			display: inline-block;
 
 			vertical-align: middle;
+
+			transition: color .2s;
 		}
 		.svg-icon {
 			font-size: 2rem;
@@ -177,13 +181,13 @@
 
 			margin: 0 1rem 0 0;
 
-			transition: color .2s;
+			transition: opacity .2s;
 
-			color: rgba(#323232, .2);
+			opacity:.3;
 		}
 		&:hover {
 			.svg-icon {
-				color: rgba(#323232, .8);
+				opacity:1;
 			}
 		}
 	}
@@ -233,6 +237,72 @@
 				.svg-icon {
 					color: rgba(#323232, .8);
 				}
+			}
+		}
+	}
+
+
+	&__alt-info {
+		font-size: 0;
+
+		display: block;
+
+		padding: .1rem 2rem;
+	}
+	&__alt-name {
+		font-size: 1.6rem;
+
+		display: inline-block;
+		overflow: hidden;
+
+		width: calc(100% - 4.2rem);
+		margin: 1.4rem 0;
+
+		text-align: right;
+		vertical-align: middle;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		&:hover .photo__alt-link {
+			color: #28bbf0;
+		}
+	}
+	&__alt-link {
+		transition: color .2s;
+		text-decoration: none;
+
+		color: currentColor;
+	}
+	&__alt-actions {
+		display: inline-block;
+
+		margin: 1.4rem 0;
+
+		vertical-align: middle;
+	}
+	&__alt-action {
+		display: inline-block;
+
+		margin: 0 2rem 0 0;
+		padding: 0;
+
+		cursor: pointer;
+		vertical-align: middle;
+
+		color: rgba(#323232, .8);
+		border: 0;
+		background: none;
+		.svg-icon {
+			font-size: 2.2rem;
+
+			transition: color .2s;
+
+			color: rgba(#323232, .2);
+
+			position:relative;
+		}
+		&:hover {
+			.svg-icon {
+				color: rgba(#323232, .8);
 			}
 		}
 	}

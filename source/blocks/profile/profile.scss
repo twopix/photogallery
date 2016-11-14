@@ -318,6 +318,9 @@
 			margin:0 0 0 2rem;
 		}
 	}
+	&_top {
+		vertical-align: top;
+	}
 	&_mini {
 		.profile__pic {
 			width:5rem;
@@ -326,12 +329,17 @@
 			margin: 0 2rem 0 0;
 
 			&:after {
-				border: 0;
+				border-width: 0;
 			}
 		}
 		.profile__name {
 			margin:0;
 			font-size:1.6rem;
+		}
+	}
+	&_mini-border {
+		.profile__pic:after {
+			border-width: .2rem;
 		}
 	}
 }

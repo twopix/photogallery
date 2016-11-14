@@ -1,4 +1,5 @@
 .photos {
+	position:relative;
 	&__title {
 		margin: 0 0 3.1rem;
 	}
@@ -16,5 +17,35 @@
 	&__more {
 		text-align:center;
 		margin-top:2rem;
+	}
+	&__add {
+		position:absolute;
+		right:0;
+		bottom:100%;
+	}
+
+	&_in-album {
+		margin-top:1rem;
+
+		.photos__item {
+			width:calc(33.33% - 2rem);
+		}
+
+		.photo__actions {
+			color:#fff;
+			position:absolute;
+			bottom:0;
+			left: 2rem;
+			z-index:2;
+		}
+		.photo__action .svg-icon {
+			opacity:1;
+		}
+		.photo__action .photo__action-name {
+			color:rgba(#fff,.4);
+		}
+		.photo__action:hover .photo__action-name {
+			color:rgba(#fff,1);
+		}
 	}
 }
