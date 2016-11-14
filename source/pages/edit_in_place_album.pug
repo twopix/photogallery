@@ -1,0 +1,164 @@
+extends album
+
+block variables
+	- var title = 'Main'
+
+block header
+	header.header
+		.header__bg
+			img(src="./assets/img/page__header-back.jpg" alt="")
+		//- Добавляем класс .header__wrap_album-edit
+		.header__wrap.header__wrap_album-edit
+			.profile.profile_top.profile_mini.profile_mini-border
+				.profile__pic
+					img(src="./assets/img/user-pic.jpg" alt="")
+				.profile__info
+					.profile__name Антон Черепанов
+
+			form.album-inf.album-inf_edit(action="" method="post")
+				.album-inf__pic-edit.album-inf__bg-edit
+					input.input-file__input(type="file" name="")
+					button.album-inf__pic-edit-btn.input-file__btn(type="button")
+						+svg('cam')
+						span Изменить фон
+				ul.album-inf__btns
+					li.album-inf__btn
+						button.btn.btn_with-icon.btn_light 
+							span.btn__wrap
+								+svg('home')
+								span.btn__text Главная
+					li.album-inf__btn
+						button.btn.btn_with-icon.btn_light 
+							span.btn__wrap
+								+svg('edit')
+								span.btn__text Редактировать
+					//- Добавляем кнопки редактирования
+					li.album-inf__btn.album-inf__btn_edit
+						button.btn.btn_flat.btn_text.modal__btn 
+							span.btn__wrap Отменить
+					li.album-inf__btn.album-inf__btn_edit
+						button.btn.btn_flat.modal__btn 
+							span.btn__wrap Сохранить
+				.album-inf__wrap
+					.album-inf-title
+						//- Заключаем в input
+						input.input-text.input-text_full-width(type="text" name="" value="Название альбома")
+					.album-inf-descr
+						//- Заключаем в textarea
+						textarea.input-text.input-text_full-width.input-text_textarea.input-text_two-strings(name="") Фотографии природы леса, енотов и оленей. Как прекрасно сойти на дальней станции и пройтись по полю босиком. И чтобы никто не беспокоил бродить влюбленным в тишину. Запах мёда, лесных оленей и енотов будоражит нутро.
+
+		.header__album-summary
+			ul.header__album-summary-wrap
+				li.header__album-summary-item <span class="header__album-summary-value">8</span> фотографий
+				li.header__album-summary-item <span class="header__album-summary-value">12</span> лайков
+				li.header__album-summary-item <span class="header__album-summary-value">8</span> комментариев
+	//-header.header
+		.header__bg
+			img(src="./assets/img/page__header-back.jpg" alt="")
+		.header__wrap
+			//- Добавляем класс .profile_edit
+			form.profile.profile_edit(action="#" method="post")
+				//- Добавляем block .profile__pic-edit.profile__bg-edit
+				.profile__pic-edit.profile__bg-edit
+					input.input-file__input(type="file" name="")
+					button.profile__pic-edit-btn.input-file__btn(type="button")
+						+svg('cam')
+						span Изменить фон
+				.profile__pic
+					//- Добавляем block .profile__pic-edit.input-file
+					.profile__pic-edit.input-file
+						input.input-file__input(type="file" name="")
+						button.profile__pic-edit-btn.input-file__btn(type="button")
+							+svg('cam')
+							span Изменить фото
+					img(src="./assets/img/user-pic.jpg" alt="")
+
+				.profile__info
+					.profile__name
+						//- Заключаем в input
+						input.input-text.input-text_full-width(type="text" name="" value="Антон Черепов")
+					.profile__about 
+						//- Заключаем в textarea
+						textarea.input-text.input-text_full-width.input-text_textarea.input-text_two-strings(name="") Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
+					ul.profile__lnks
+						li.profile__lnks-item
+							a(href="" title="" target="_blank")
+								+svg('soc_fb')
+							//- Добавляем всплывашки
+							.profile__lnks-item-edit
+								input.input-text.input-text_border-color_gray.input-text_full-width(type="url" name="" placeholder="http://fb.com" value="")
+								.profile__lnks-item-btns
+									button.btn.btn_flat.modal__btn 
+										span.btn__wrap Сохранить
+									button.btn.btn_flat.btn_text.modal__btn 
+										span.btn__wrap Отменить
+						li.profile__lnks-item
+							a(href="" title="" target="_blank")
+								+svg('soc_vk')
+							//- Добавляем всплывашки
+							.profile__lnks-item-edit
+								input.input-text.input-text_border-color_gray.input-text_full-width(type="url" name="" placeholder="http://fb.com" value="")
+								.profile__lnks-item-btns
+									button.btn.btn_flat.modal__btn 
+										span.btn__wrap Сохранить
+									button.btn.btn_flat.btn_text.modal__btn 
+										span.btn__wrap Отменить
+						li.profile__lnks-item
+							a(href="" title="" target="_blank")
+								+svg('soc_google')
+							//- Добавляем всплывашки
+							.profile__lnks-item-edit
+								input.input-text.input-text_border-color_gray.input-text_full-width(type="url" name="" placeholder="http://fb.com" value="")
+								.profile__lnks-item-btns
+									button.btn.btn_flat.modal__btn 
+										span.btn__wrap Сохранить
+									button.btn.btn_flat.btn_text.modal__btn 
+										span.btn__wrap Отменить
+						li.profile__lnks-item
+							a(href="" title="" target="_blank")
+								+svg('soc_twitter')
+							//- Добавляем всплывашки
+							.profile__lnks-item-edit
+								input.input-text.input-text_border-color_gray.input-text_full-width(type="url" name="" placeholder="http://fb.com" value="")
+								.profile__lnks-item-btns
+									button.btn.btn_flat.modal__btn 
+										span.btn__wrap Сохранить
+									button.btn.btn_flat.btn_text.modal__btn 
+										span.btn__wrap Отменить
+						li.profile__lnks-item
+							a(href="" title="" target="_blank")
+								+svg('soc_email')
+							//- Добавляем всплывашки
+							.profile__lnks-item-edit
+								input.input-text.input-text_border-color_gray.input-text_full-width(type="email" name="" placeholder="email" value="")
+								.profile__lnks-item-btns
+									button.btn.btn_flat.modal__btn 
+										span.btn__wrap Сохранить
+									button.btn.btn_flat.btn_text.modal__btn 
+										span.btn__wrap Отменить
+					ul.profile__btns
+						li.profile__btn
+							button.btn.btn_with-icon.btn_light 
+								span.btn__wrap
+									+svg('edit')
+									span.btn__text Редактировать
+						li.profile__btn
+							button.btn.btn_with-icon.btn_light 
+								span.btn__wrap
+									+svg('off')
+									span.btn__text Выйти
+						//- Добавляем кнопки редактирования
+						li.profile__btn.profile__btn_edit
+							button.btn.btn_flat.btn_text.modal__btn 
+								span.btn__wrap Отменить
+						li.profile__btn.profile__btn_edit
+							button.btn.btn_flat.modal__btn 
+								span.btn__wrap Сохранить
+
+		.header__search
+			.search
+				.search__wrap 
+					form.search__form.form(action="#" method="post") 
+						label.form__row
+							input.input-text.input-text_with-icon.input-text_border_transparent.input-text_full-width(type="text" placeholder="Исследовать мир")
+							+svg('search')
