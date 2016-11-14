@@ -1,28 +1,33 @@
 .album-inf {
 	&__wrap {
-		position:absolute;
-		z-index:2;
-		height:16rem;
-		left: 10.5rem;
-		right: 10.5rem;
+		position: absolute;
+		z-index: 2;
 		top: 0;
+		right: 10.5rem;
 		bottom: 0;
-		max-width: $max-width - 21rem;
-		margin:auto;
-		color:#fff;
-	}
+		left: 10.5rem;
 
+		max-width: $max-width - 21rem;
+		height: 16rem;
+		margin: auto;
+
+		color: #fff;
+	}
 	&-title {
-		text-align:center;
-		font-size:2.1rem;
 		font-family: $default-font-special;
-		margin:0 0 1rem;
+		font-size: 2.1rem;
+
+		margin: 0 0 1rem;
+
+		text-align: center;
 	}
 	&-descr {
-		text-align:center;
-		font-size:1.6rem;
-		line-height:1.5;
-		color:rgba(#fff,.8);
+		font-size: 1.6rem;
+		line-height: 1.5;
+
+		text-align: center;
+
+		color: rgba(#fff,.8);
 	}
 	&__btns {
 		position: absolute;
@@ -30,12 +35,12 @@
 		top: 1rem;
 		right: 3.5rem;
 
+		box-sizing: border-box;
 		padding: 0;
 
 		list-style: none;
 
 		text-align: right;
-		box-sizing:border-box;
 	}
 	&__btn {
 		margin-top: 1rem;
@@ -43,9 +48,7 @@
 	&__btn_edit {
 		display: none;
 	}
-
 	&_edit {
-
 		&:after {
 			position: absolute;
 			z-index: 2;
@@ -76,22 +79,23 @@
 			background: rgba(#fff,.8);
 		}
 		.album-inf__wrap {
-			z-index:5;
+			z-index: 5;
 		}
-
 		.album-inf__btns {
-			top:24rem;
+			top: 24rem;
 			right: 0;
 			left: 0;
-			width:100%;
-			padding:1rem 3.5rem;
+
+			width: 100%;
+			padding: 1rem 3.5rem;
 		}
 		.album-inf__btn {
 			display: none;
 		}
 		.album-inf__btn_edit {
 			display: inline-block;
-			margin:0 0 0 2rem;
+
+			margin: 0 0 0 2rem;
 		}
 	}
 	&__pic-edit {
@@ -105,11 +109,11 @@
 		border: .3rem solid #fff;
 		border-radius: 50%;
 		background: rgba(0,0,0,.8);
-
 		&-btn {
 			width: 100%;
 			height: 100%;
-			padding:0;
+			padding: 0;
+
 			cursor: pointer;
 			transition: color .2s;
 			text-align: center;
@@ -119,13 +123,15 @@
 			outline: none;
 			background: none;
 			.svg-icon {
-				display: inline-block;
-				vertical-align: middle;
 				font-size: 5rem;
 
 				position: relative;
 
+				display: inline-block;
+
 				margin: 0 1rem 0 0;
+
+				vertical-align: middle;
 			}
 			span {
 				font-family: $default-font-bold;
@@ -134,6 +140,7 @@
 				position: relative;
 
 				display: inline-block;
+
 				vertical-align: middle;
 			}
 			&:focus,

@@ -1,0 +1,33 @@
+extends main
+
+block variables
+	- var rootClass = 'modal-on'
+
+block modal
+	.modal.modal_visible
+		.modal__overlay
+		.modal__wrapper
+			.modal__content
+				.modal__content-wrap
+					.modal__header
+						.modal__title Добавить фотографии
+						.modal__close
+							button.modal__close-btn
+								span.btn__wrap
+									+svg('close')
+					.modal__body
+						form.form.form_files(action="#" method="post")
+							.form__files-zone.form__files-zone_empty
+								.form__files-file.form__files-btn
+									.form__file-wrap
+										+svg('cam')
+										span.form__files-btn-text Перетащите фото сюда или <button type="button"><span>выберите файл</span></button>
+							.form__tip
+								.form__tip-message Обложка обязательно должна быть выбрана!
+
+					.modal__footer
+						.modal__btns-left
+							button.btn.btn_flat.modal__btn 
+								span.btn__wrap Сохранить
+							button.btn.btn_flat.btn_text.modal__btn 
+								span.btn__wrap Отменить

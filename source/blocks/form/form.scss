@@ -3,19 +3,23 @@
 	&__group {
 		position: relative;
 
-		padding:2rem 0;
+		padding: 2rem 0;
 		&:after {
-			content:"";
-			display:block;
-			position:absolute;
-			top:0;
-			left:-2rem;
-			right:-2rem;
-			height:.1rem;
-			background:#d6d6d6;
+			position: absolute;
+			top: 0;
+			right: -2rem;
+			left: -2rem;
+
+			display: block;
+
+			height: .1rem;
+
+			content: "";
+
+			background: #d6d6d6;
 		}
 		&:first-child:after {
-			display:none;
+			display: none;
 		}
 	}
 	&__row {
@@ -24,54 +28,69 @@
 		position: relative;
 
 		display: table;
-		width:100%;
-		max-width:100%;
 
+		width: 100%;
+		max-width: 100%;
 		margin: 0 0 1rem;
 		&:last-child {
 			margin: 0;
 		}
-		&-preview, &-name, &-el {
-			display:table-cell;
-			vertical-align:middle;	
-			table-layout: fixed;	
-			box-sizing:border-box;	
-		}
-		&-preview, &-name {
-			padding:0 2rem 0 0;
-			font-family: $default-font-bold;
-			font-size:1.6rem;
-			line-height:4rem;
-			text-align:right;
-			min-width:13rem;
-		}
-		&-preview {font-size:0;}
+		&-preview,
+		&-name,
 		&-el {
-			width:100%;
-			overflow:hidden;
+			display: table-cell;
+
+			box-sizing: border-box;
+
+			table-layout: fixed;
+
+			vertical-align: middle;
+		}
+		&-preview,
+		&-name {
+			font-family: $default-font-bold;
+			font-size: 1.6rem;
+			line-height: 4rem;
+
+			min-width: 13rem;
+			padding: 0 2rem 0 0;
+
+			text-align: right;
+		}
+		&-preview {
+			font-size: 0;
+		}
+		&-el {
+			overflow: hidden;
+
+			width: 100%;
 			&_width_50 {
-				width:50%;
-				padding-right:1rem;
+				width: 50%;
+				padding-right: 1rem;
 				&:last-child {
-					padding-right:0;
+					padding-right: 0;
 				}
 			}
 		}
 	}
 	&__preview-pic {
+		position: relative;
+
 		display: inline-block;
-		vertical-align:middle;	
+		overflow: hidden;
+
 		width: 5.4rem;
-		height:5.4rem;
+		height: 5.4rem;
+
+		vertical-align: middle;
+
 		border-radius: 50%;
-		overflow:hidden;
-		position:relative;
-	
 		img {
-			width:100%;
-			max-width:none;
-			min-height:100%;
-			object-fit:cover;
+			width: 100%;
+			max-width: none;
+			min-height: 100%;
+
+			object-fit: cover;
 		}
 	}
 	&__title {
@@ -109,7 +128,6 @@
 		display: block;
 
 		margin: 1em 0;
-
 		&_center {
 			text-align: center;
 		}
@@ -124,6 +142,168 @@
 			border-radius: .5rem;
 			background: rgba(#ffe0e0,.9);
 		}
+	}
+	&__files-zone {
+		font-size: 0;
 
+		position: relative;
+
+		box-sizing: border-box;
+		min-height: 32.8rem;
+		padding: .8rem;
+
+		color: #323232;
+		border: .3rem dashed #f1f1f1;
+		border-radius: 1rem;
+
+		background: #f9f9f9;
+
+
+		&:hover {
+			.form__files-btn {
+				opacity: 1;
+			}
+		}
+		&_empty {
+			.form__files-btn {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+
+				display: block;
+
+				width: 20rem;
+				height: auto;
+				margin: 0 -10rem;
+				transform:translateY(-50%);
+				padding: 0;
+
+				.form__file-wrap {
+					background: none;
+					padding:0;
+				}
+			}
+
+		}
+	}
+	&__files-file {
+		position: relative;
+
+		display: inline-block;
+		overflow: visible;
+
+		box-sizing: border-box;
+		width: 13.8rem;
+		height: 13.8rem;
+		margin: .8rem;
+
+		vertical-align: top;
+		img {
+			min-width: 100%;
+			max-width: none;
+			height: 100%;
+			min-height: 100%;
+
+			object-fit: cover;
+		}
+	}
+	&__file-wrap {
+		overflow: hidden;
+		box-sizing: border-box;
+
+		width: 100%;
+		height: 100%;
+
+		border-radius: .5rem;
+
+		background: #e9e9e9;
+	}
+	&__files-btn {
+		font-size: 1.6rem;
+
+		cursor: pointer;
+		transition: opacity .2s;
+		text-align: center;
+
+		opacity: .4;
+		
+		.svg-icon {
+			font-size: 5rem;
+
+			margin: 0 0 1rem;
+
+			vertical-align: middle;
+
+			color: #999;
+		}
+		&-text {
+			display: block;
+		}
+		button {
+			font-family: $default-font;
+			font-size: 1.6rem;
+
+			padding: 0;
+
+			cursor: pointer;
+
+			color: #0094ca;
+			border: 0;
+			background: none;
+			span {
+				position: relative;
+			}
+		}
+		.form__file-wrap {
+			padding:3rem 0 0;
+		}
+	}
+	&__file-delete {
+		position: absolute;
+		top: -1.3rem;
+		right: -1.3rem;
+
+		width: 2.6rem;
+		height: 2.6rem;
+		padding: 0;
+
+		cursor: pointer;
+		transition: background-color .2s;
+		transform: rotate(45deg);
+
+		border: .3rem solid #fff;
+		border-radius: 50%;
+		background: #ee4634;
+		&:hover {
+			background: #c00;
+		}
+		&:after,
+		&:before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			display: block;
+
+			width: 1.4rem;
+			height: .2rem;
+			margin: auto;
+
+			content: "";
+
+			border-radius: .15rem;
+			background: #fff;
+		}
+		&:before {
+			width: .2rem;
+			height: 1.4rem;
+		}
+	}
+	&_files {
+		.form__tip {
+			margin-bottom: 0;
+		}
 	}
 }

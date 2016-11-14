@@ -109,7 +109,7 @@
 		display: inline-block;
 		overflow: hidden;
 
-		width: calc(100% - 4.2rem);
+		width: 100%;
 		margin: 1.4rem 0;
 
 		text-align: right;
@@ -119,6 +119,9 @@
 		&:hover .album__link {
 			color: #28bbf0;
 		}
+	}
+	&__actions + &__name {
+		width: calc(100% - 4.2rem);
 	}
 	&__link {
 		transition: color .2s;
@@ -150,11 +153,11 @@
 		.svg-icon {
 			font-size: 2.2rem;
 
+			position: relative;
+
 			transition: color .2s;
 
 			color: rgba(#323232, .2);
-
-			position:relative;
 		}
 		&:hover {
 			.svg-icon {

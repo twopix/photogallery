@@ -1,0 +1,127 @@
+extends ../layout
+
+block variables
+	- var title = 'Main'
+
+block content
+	.page
+		block header
+			header.header
+				.header__bg
+					img(src="./assets/img/page__header-back.jpg" alt="")
+				.header__wrap
+					.profile
+						.profile__pic
+							img(src="./assets/img/user-pic_.jpg" alt="")
+						.profile__info
+							.profile__name Антон Черепов
+							.profile__about Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых.
+							ul.profile__lnks
+								li.profile__lnks-item
+									a(href="" title="" target="_blank")
+										+svg('soc_fb')
+								li.profile__lnks-item
+									a(href="" title="" target="_blank")
+										+svg('soc_vk')
+								li.profile__lnks-item
+									a(href="" title="" target="_blank")
+										+svg('soc_google')
+								li.profile__lnks-item
+									a(href="" title="" target="_blank")
+										+svg('soc_twitter')
+								li.profile__lnks-item
+									a(href="" title="" target="_blank")
+										+svg('soc_email')
+							ul.profile__btns
+								li.profile__btn
+									button.btn.btn_with-icon.btn_light 
+										span.btn__wrap
+											+svg('home')
+											span.btn__text Главная
+
+				.header__search
+					.search
+						.search__wrap 
+							form.search__form.form(action="#" method="post") 
+								label.form__row
+									input.input-text.input-text_with-icon.input-text_border_transparent.input-text_full-width(type="text" placeholder="Исследовать мир")
+									+svg('search')
+
+		main.main
+			.main__section
+				.albums.main__section-wrap
+					.title.albums__title Альбомы
+					//-.albums__add
+						button.btn.btn_with-icon.btn_light 
+							span.btn__wrap
+								+svg('add')
+								span.btn__text Добавить альбом
+					.albums__list
+						.album.albums__item
+							a.album__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.album__resume
+									.album__descr Фотографии природы леса, енотов и оленей
+									.album__count
+										span.album__count-value 18
+										span Фотографий
+							.album__info
+								//-.album__actions
+									button.album__action
+										+svg('edit')
+								.album__name 
+									a.album__link(href="" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						.album.albums__item
+							a.album__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.album__resume
+									.album__descr Фотографии природы леса, енотов и оленей
+									.album__count
+										span.album__count-value 18
+										span Фотографий
+							.album__info
+								//-.album__actions
+									button.album__action
+										+svg('edit')
+								.album__name 
+									a.album__link(href="" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						.album.albums__item
+							a.album__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.album__resume
+									.album__descr Фотографии природы леса, енотов и оленей
+									.album__count
+										span.album__count-value 18
+										span Фотографий
+							.album__info
+								//-.album__actions
+									button.album__action
+										+svg('edit')
+								.album__name 
+									a.album__link(href="" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+						.album.albums__item
+							a.album__pic(href="" title="")
+								img(src="./assets/img/photo.jpg" alr="" title="")
+								.album__resume
+									.album__descr Фотографии природы леса, енотов и оленей
+									.album__count
+										span.album__count-value 18
+										span Фотографий
+							.album__info
+								//-.album__actions
+									button.album__action
+										+svg('edit')
+								.album__name 
+									a.album__link(href="" title="") Путешествие на лодке по озеру  на лодке по озеру  на лодке по озеру  на лодке по озеру лодке по озеру  на лодке по озеру  на лодке по озеру
+
+
+
+		footer.footer.footer_color_white.footer_bg-dark
+			.footer__bg
+				img(src="./assets/img/page__header-back.jpg" alt="")
+			.footer__wrap
+				a.footer__top(href="#" title="")
+					+svg('top')
+				.footer__about Перед вами сервис, который поможет вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
+				.footer__copyright.footer__copyright_color_gray 2016 Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool
+block modal
