@@ -34,6 +34,12 @@
                     templateUrl: 'app/views/userView.html',
                     controller: 'UserController as user'
                 })
+                .state('albums', {
+                    name: 'albums',
+                    url: '/albums',
+                    templateUrl: 'app/views/userView.html',
+                    controller: 'AlbumController as album'
+                })
                 .state('main', {
                     name: 'main',
                     url: '/main',

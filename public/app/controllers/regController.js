@@ -22,7 +22,7 @@
       // Use Satellizer's $auth service to login
       $auth.signup(credentials).then(function(data) {
         // If login is successful, redirect to the users state
-        $state.go('users', {});
+        $state.go('albums', {});
       }).catch(function (data) {
         vm.error = data.data;
       });

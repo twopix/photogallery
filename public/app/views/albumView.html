@@ -1,0 +1,16 @@
+<div class="col-sm-6 col-sm-offset-3">
+    <div class="well">
+        <h3>Users</h3>
+        <button class="btn btn-primary" style="margin-bottom: 10px" ng-click="album.getAlbums()">Get Albums!</button>
+        <ul class="list-group" ng-if="album.albums">
+            <li class="list-group-item" ng-repeat="album in album.albums">
+                <h4>{{album.name}}</h4>
+                <h5>{{album.email}}</h5>
+            </li>
+        </ul>
+        <div class="alert alert-danger" ng-if="album.error">
+            <strong>There was an error: </strong> {{album.error.error}}
+            <br>Please go back and login again
+        </div>
+    </div>
+</div>
