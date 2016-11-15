@@ -45,7 +45,7 @@ Route::group(['prefix' => 'api'], function()
 
 		Route::get('upload', 'FileUploadController@index'); //temp
 		Route::post('upload', 'FileUploadController@store');
-
+        Route::get('/photo/paginationPhotos', 'PhotoListController@index');
 	});
 });
 
