@@ -37,7 +37,7 @@
                 .state('albums', {
                     name: 'albums',
                     url: '/albums',
-                    templateUrl: 'app/views/userView.html',
+                    templateUrl: 'app/views/albumView.html',
                     controller: 'AlbumController as album'
                 })
                 .state('main', {

@@ -6,23 +6,23 @@
     .module('authApp')
     .controller('MainController', MainController);
 
-  function MainController($http) {
+  function MainController($scope, $http) {
+    $scope.items = [];
+    $scope.lastpage=1;
 
-    var vm = this;
-
-    vm.users;
-    vm.error;
-
-    vm.getUsers = function() {
-
-      // This request will hit the index method in the AuthenticateController
-      // on the Laravel side and will return the list of users
-      $http.get('api/authenticate').success(function(users) {
-        vm.users = users;
-      }).error(function(error) {
-        vm.error = error;
+    $scope.init = function() {
+      $scope.lastpage=1;
+      $http({
+        url: '/api/photo/paginationPhotos',
+        method: "GET",
+        params: {page:  $scope.lastpage}
+      }).success(function(data, status, headers, config) {
+        $scope.items = data.data;
+        $scope.currentpage = data.current_page;
       });
-    }
+    };
+
+    $scope.init();
   }
 
 })();
